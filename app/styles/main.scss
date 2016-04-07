@@ -1,1 +1,6 @@
-// Your application styles go here
+// Robotodraft fonts from google
+$RobotoDraftFontPath: "../fonts";
+$RobotoDraftFontName: "RobotoDraft";
+$RobotoDraftFontVersion: "1.1.0";
+
+@import "../bower_components/robotodraft/sass/robotodraft.scss";
