@@ -1,5 +1,5 @@
 'use strict';
-app.controller ('MapCtrl', function($scope){
+angular.module('refugeeApp').controller ('MapCtrl', function($scope){
   angular.extend($scope, {
     center: {
       lat: 51.1642292,

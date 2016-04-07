@@ -1,5 +1,5 @@
 'use strict';
-app.controller('GuideCtrl', function ($scope, ionicMaterialInk) {
+angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMaterialInk) {
   /*var request =  new XMLHttpRequest();
   request.open("GET", "../templates/guides.json", false);
   request.send(null);
