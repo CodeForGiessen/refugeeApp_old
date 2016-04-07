@@ -35,7 +35,7 @@ module.exports = function (grunt) {
     ngconstant: {
       options: {
         space: '  ',
-        wrap: '"use strict";\n\n {%= __ngModule %}',
+        wrap: '\'use strict\';\n\n {%= __ngModule %}',
         name: 'config',
         dest: '<%= yeoman.app %>/<%= yeoman.scripts %>/configuration.js'
       },
@@ -161,7 +161,7 @@ module.exports = function (grunt) {
       }
     },
 
-    
+
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
@@ -190,7 +190,7 @@ module.exports = function (grunt) {
         }
       }
     },
-    
+
 
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
@@ -390,11 +390,11 @@ module.exports = function (grunt) {
       unit: {
         // Change this to 'Chrome', 'Firefox', etc. Note that you will need
         // to install a karma launcher plugin for browsers other than Chrome.
-        browsers: ['PhantomJS'],
+        browsers: ['Firefox'],
         background: true
       },
       continuous: {
-        browsers: ['PhantomJS'],
+        browsers: ['Firefox'],
         singleRun: true
       }
     },
@@ -549,7 +549,7 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask('coverage', 
+  grunt.registerTask('coverage',
     ['karma:continuous',
     'connect:coverage:keepalive'
   ]);

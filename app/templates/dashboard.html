@@ -1,0 +1,15 @@
+<ion-view view-title="Dashboard">
+  <ion-content ng-controller="DashboardCtrl">
+    <div class="item card-item">
+      <div ui-sref="app.gallery" class="card stable-bg ink ink-dark" ng-repeat="tip in tooltips">
+        <div class="item item-text-wrap">
+          <strong>{{tip.title}}</strong>
+          <p>{{tip.text}}</p>
+          <div class="card-footer text-right">
+            <p>Tipp des Tages</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
