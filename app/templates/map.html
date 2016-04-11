@@ -1,8 +1,5 @@
 <ion-view view-title="Gießen Map">
-  <ion-content>
-    <leaflet center="center" defaults="defaults" layers="layers">
-      <input type="text" ng-model="center.lat" style="margin-left:200px;" />
-      <input type="text" ng-model="center.lng" style="margin-left:200px;" />
-    </leaflet>
+  <ion-content data-tap-disabled="true" ng-controller="MapCtrl">
+      <leaflet center="center" defaults="defaults" event-broadcast="events"></leaflet>
   </ion-content>
 </ion-view>

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMaterialInk) {
+angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMaterialInk, $state) {
   /*var request =  new XMLHttpRequest();
   request.open("GET", "../templates/guides.json", false);
   request.send(null);
@@ -41,6 +41,14 @@ angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMate
       title: 'Notfälle'
     }
   ];
+
+  $scope.getCategory = function (pos) {
+    $scope.id = pos;
+    $scope.title = this.guides[pos].title;
+    $scope.filteredGuides = {};
+    $state.go('app.guideline');
+  };
+
 
   // Activate ink for controller
   ionicMaterialInk.displayEffect();

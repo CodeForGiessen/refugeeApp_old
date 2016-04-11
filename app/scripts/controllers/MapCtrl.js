@@ -1,24 +1,31 @@
 'use strict';
 angular.module('refugeeApp').controller ('MapCtrl', function($scope){
-  angular.extend($scope, {
-    center: {
-      lat: 51.1642292,
-      lng: 10.4541194,
-      zoom: 6
-    },
+  $scope.center ={
+          'lat': 50.583732,
+          'lng': 8.678344,
+          'zoom': 11
+      };
+      $scope.markers = {};
+      $scope.defaults = {
+          tileLayer: 'https://{s}.tiles.mapbox.com/v3/foobar123.j5b19dpp/{z}/{x}/{y}.png',
+          tileLayerOptions: {
+              attribution: '© Mapbox © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+              detectRetina: true,
+              reuseTiles: true,
+          }
+      };
+      $scope.events= {
+          markers: {
+              enable: ['click'],
+              logic: 'emit'
+          }
+      };
 
-    defaults: {
-      zoomControl: false
-    },
+      /*    var markers = {};
 
-    layers: {
-      baselayers: {
-        osm: {
-          name: 'OpenStreetMap',
-          url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-          type: 'xyz'
-        }
-      }
-    }
-  });
+              var marker = {
+                  lat: parseFloat(item.latitude),
+                  lng: parseFloat(item.longitude)
+
+          $scope.markers=markers;*/
 });

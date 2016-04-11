@@ -1,0 +1,7 @@
+<ion-view view-title="{{$scope.title}}">
+  <ion-content ng-controller="GuideCtrl">
+    <div class="card" ng-repeat="guide in guides">
+      <p>{{guide.cards}}</p>
+    </div>
+  </ion-content>
+</ion-view>

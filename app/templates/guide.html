@@ -1,19 +1,54 @@
 <ion-view view-title="Germany Guide">
   <ion-content ng-controller="GuideCtrl">
-    <!--<div class="list condensed-space no-padding animate-blinds">
-      <div class="card energized-900-bg" ng-repeat="guide in guides">
-        <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse">
-          <h2>{{guide.title}}</h2>
-        </a>
-      </div>
-    </div>-->
     <div class="list condensed-space no-padding">
-    <div class="card dark-bg" ng-repeat="guide in guides">
-      <a class="item clear-bg item-bg-image" href="">
-        <h2>{{guide.title}}</h2>
-        <img src="../img/login.jpg">
+    <div class="card dark-bg">
+      <a class="item clear-bg item-bg-image" ng-click="getCategory(0)">
+        <h2>{{guides[0].title}}</h2>
+        <img src="../images/toronto.jpg">
       </a>
     </div>
+      <div class="card balanced-bg">
+        <a class="item clear-bg item-bg-image" href="" ng-click="getCategory(1)">
+          <h2>{{guides[1].title}}</h2>
+          <img src="../images/new-zealand.jpg">
+        </a>
+      </div>
+      <div class="card energized-bg">
+        <a class="item clear-bg item-bg-image" href="" ng-click="getCategory(2)">
+          <h2>{{guides[2].title}}</h2>
+          <img src="../images/scotland.jpg">
+        </a>
+      </div>
+      <div class="card assertive-bg">
+        <a class="item clear-bg item-bg-image" href="" ng-click="getCategory(3)">
+          <h2>{{guides[3].title}}</h2>
+          <img src="../images/kyoto.jpg">
+        </a>
+      </div>
+      <div class="card royal-bg">
+        <a class="item clear-bg item-bg-image" href="" ng-click="getCategory(4)">
+          <h2>{{guides[4].title}}</h2>
+          <img src="../images/hawaii.jpg">
+        </a>
+      </div>
+      <div class="card balanced-bg">
+        <a class="item clear-bg item-bg-image" href="" ng-click="getCategory(5)">
+          <h2>{{guides[5].title}}</h2>
+          <img src="../images/new-zealand.jpg">
+        </a>
+      </div>
+      <div class="card royal-bg">
+        <a class="item clear-bg item-bg-image" href="" ng-click="getCategory(6)">
+          <h2>{{guides[6].title}}</h2>
+          <img src="../images/hawaii.jpg">
+        </a>
+      </div>
+      <div class="card energized-bg">
+        <a class="item clear-bg item-bg-image" href="" ng-click="getCategory(7)">
+          <h2>{{guides[7].title}}</h2>
+          <img src="../images/scotland.jpg">
+        </a>
+      </div>
   </div>
   </ion-content>
 </ion-view>
