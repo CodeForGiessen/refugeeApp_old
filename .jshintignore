@@ -1,1 +1,3 @@
 app/scripts/configuration.js
+app/bower_components
+node_modules

@@ -1,26 +1,26 @@
 <ion-view view-title="Germany Guide">
-  <ion-content ng-controller="GuideCtrl">
+  <ion-content ng-controller="GuideCtrl as GCtrl">
     <div class="list condensed-space no-padding">
     <div class="card dark-bg">
-      <a class="item clear-bg item-bg-image" ng-click="getCategory(0)">
+      <a class="item clear-bg item-bg-image" ng-click="GCtrl.getCategory(0)">
         <h2>{{guides[0].title}}</h2>
         <img src="../images/toronto.jpg">
       </a>
     </div>
       <div class="card balanced-bg">
-        <a class="item clear-bg item-bg-image" href="" ng-click="getCategory(1)">
+        <a class="item clear-bg item-bg-image" href="" ng-click="GCtrl.getCategory(1)">
           <h2>{{guides[1].title}}</h2>
           <img src="../images/new-zealand.jpg">
         </a>
       </div>
       <div class="card energized-bg">
-        <a class="item clear-bg item-bg-image" href="" ng-click="getCategory(2)">
+        <a class="item clear-bg item-bg-image" href="" ng-click="GCtrl.getCategory(2)">
           <h2>{{guides[2].title}}</h2>
           <img src="../images/scotland.jpg">
         </a>
       </div>
       <div class="card assertive-bg">
-        <a class="item clear-bg item-bg-image" href="" ng-click="getCategory(3)">
+        <a class="item clear-bg item-bg-image" href="" ng-click="GCtrl.getCategory(3)">
           <h2>{{guides[3].title}}</h2>
           <img src="../images/kyoto.jpg">
         </a>

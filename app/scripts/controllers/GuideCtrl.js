@@ -1,9 +1,11 @@
 'use strict';
-angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMaterialInk, $state) {
+angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMaterialInk, $state, $rootScope) {
   /*var request =  new XMLHttpRequest();
   request.open("GET", "../templates/guides.json", false);
   request.send(null);
   $scope.guides = JSON.parse(request.responseText);*/
+
+  //$rootScope.title = 'title';
 
   $scope.guides = [
     {
@@ -42,10 +44,12 @@ angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMate
     }
   ];
 
-  $scope.getCategory = function (pos) {
-    $scope.id = pos;
-    $scope.title = this.guides[pos].title;
-    $scope.filteredGuides = {};
+  $scope.title = $scope.guides[0].title;
+
+  this.getCategory = function (pos) {
+    //$scope.id = pos;
+    //$rootScope.title = $scope.guides[pos].title;
+    //$scope.filteredGuides = {};
     $state.go('app.guideline');
   };
 

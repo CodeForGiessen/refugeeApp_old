@@ -1,5 +1,5 @@
 ﻿<ion-side-menus enable-menu-with-back-views="false">
-    <ion-side-menu-content>
+    <ion-side-menu-content ng-controller="DashboardCtrl">
         <ion-nav-bar class="bar-balanced-900">
             <ion-nav-back-button class="no-text">
             </ion-nav-back-button>
@@ -7,7 +7,7 @@
                 <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
             </ion-nav-buttons>
             <ion-nav-buttons side="right">
-                <button class="button button-icon button-clear ion-android-download"></button>
+                <button class="button button-icon button-clear ion-android-download" ng-click="loadContent()"></button>
             </ion-nav-buttons>
         </ion-nav-bar>
         <ion-nav-view name="menuContent"></ion-nav-view>
