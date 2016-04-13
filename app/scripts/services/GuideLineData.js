@@ -1,8 +1,9 @@
+'use strict';
 angular.module('refugeeApp').factory('GuideLineData', ['ENV', '$http', 'KeyCache',
   function (ENV, $http, KeyCache) {
     //var allGuidesKey = 'guideCache.allGuidelines';
     //var maxAge = ENV.cachesMaxAge.guidelines;
-    //var guidesUrl = ENV.apiEndpoint + '';
+    var guidesUrl = ENV.apiEndpoint + '';
     //var timeout = ENV.requestTimeout;
 
     var rebuild = function () {

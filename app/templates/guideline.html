@@ -1,7 +1,7 @@
-<ion-view view-title="{{title}}">
-  <ion-content ng-controller="GuideCtrl">
-    <div class="card" ng-repeat="guide in guides">
-      <p>{{guide.cards}}</p>
+<ion-view view-title="{{guideTitle}}">
+  <ion-content ng-controller="GuideLineCtrl">
+    <div class="list card stable-bg" ng-repeat="guide in filteredGuides">
+      <div class="item item-body">{{guide.card}}</div>
     </div>
   </ion-content>
 </ion-view>

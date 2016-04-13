@@ -1,6 +1,19 @@
 <ion-view view-title="Germany Guide">
   <ion-content ng-controller="GuideCtrl as GCtrl">
     <div class="list condensed-space no-padding">
+      <div class="card balanced-bg" ng-repeat="guideline in guides">
+        <a class="item clear-bg item-bg-image" ng-click="getCategorys($index)">
+          <h2>{{guideline.title}}</h2>
+          <img ng-src="{{guideline.img}}">
+
+        <div class="rating">
+          <p class="likes" ng-click="plusOne($index)">+ {{guideline.likes}}</p>
+        </div>
+        </a>
+
+      </div>
+    </div>
+    <!--<div class="list condensed-space no-padding">
     <div class="card dark-bg">
       <a class="item clear-bg item-bg-image" ng-click="GCtrl.getCategory(0)">
         <h2>{{guides[0].title}}</h2>
@@ -49,6 +62,6 @@
           <img src="../images/scotland.jpg">
         </a>
       </div>
-  </div>
+  </div>-->
   </ion-content>
 </ion-view>

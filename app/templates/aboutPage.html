@@ -1,0 +1,56 @@
+<ion-view view-title="About">
+  <ion-content>
+    <div class="card list">
+      <div class="item item-divider">
+        Feedback
+      </div>
+      <div class="item item-text-wrap">
+        <form name="feedbackForm" ng-controller="DashboardCtrl">
+          <div class="list">
+            <label class="item item-input item-floating-label">
+          <span class="input-label">
+            First Name
+          </span>
+              <input type="text" placeholder="First Name" required>
+            </label>
+            <label class="item item-input item-floating-label">
+          <span class="input-label">
+            Last Name
+          </span>
+              <input type="text" placeholder="Last Name" required>
+            </label>
+            <div class="item range range-positive">
+              <i class="icon ion-ios-star-outline">
+              </i>
+              <input type="range" name="volume" min="0" max="100" value="50" required>
+              <i class="icon ion-star"></i>
+            </div>
+            <label class="item item-input item-floating-label">
+              <span class="panel-bug-textarea">Your message here...</span>
+              <textarea name="message" cols="35" rows="5"></textarea>
+            </label>
+            <span class="error" ng-show="feedbackForm.input.$error.required">Please check your input!</span>
+            <button class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1">Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card list">
+      <div class="item item-divider">
+        Developer
+      </div>
+      <div class="item item-text-wrap">
+
+      </div>
+    </div>
+    <div class="card list">
+      <div class="item item-divider">
+        License
+      </div>
+      <div class="item item-text-wrap">
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
