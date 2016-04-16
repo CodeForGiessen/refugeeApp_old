@@ -1,0 +1,28 @@
+<!--<ion-popover-view>
+  <ion-header-bar><h1 class="title">{{ "CHANGELANG_TITLE" | translate}}</h1></ion-header-bar>
+  <ion-content ng-controller="LanguageCtrl">
+    <ion-list>
+      <ion-item ng-click="changeLang('de_DE')">German</ion-item>
+      <ion-item ng-click="changeLang('en_US')">English</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-popover-view>-->
+
+<!--<ion-modal-view>
+  <ion-header-bar>
+    <h1>title</h1></ion-header-bar>
+  <ion-content>
+    <ion-list>
+      <ion-item>Deutsch</ion-item>
+      <ion-item>Englisch</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-modal-view>-->
+<ion-view view-title="{{'CHANGELANG_TITLE'|translate}}">
+  <ion-content ng-controller="LanguageCtrl">
+    <ion-list>
+      <ion-item ng-click="changeLang('de_DE')">German</ion-item>
+      <ion-item ng-click="changeLang('en_US')">English</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

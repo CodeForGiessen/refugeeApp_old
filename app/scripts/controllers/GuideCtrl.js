@@ -89,13 +89,6 @@ angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMate
   $scope.getCategorys = function (index) {
     var title = $scope.guides[index].title;
     localStorage.setItem('guideTitle', title);
-
-    var filteredGuides = [];
-
-    filteredGuides = $scope.guides[index];
-
-    localStorage.setItem('selectedGuides', '[' + JSON.stringify(filteredGuides) + ']');
-
     localStorage.setItem('index', index);
     localStorage.setItem('guides', JSON.stringify($scope.guides));
     $state.go('app.guideline');

@@ -6,8 +6,11 @@
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
       </ion-nav-buttons>
-      <ion-nav-buttons side="right">
+      <ion-nav-buttons side="primary" >
         <button class="button button-icon button-clear ion-android-download" ng-click="loadContent()"></button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="secondary">
+        <button class="button button-icon button-clear ion-earth" ng-click="showLangPopOver()"></button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
@@ -16,25 +19,28 @@
     <ion-header-bar class="expanded">
       <img src="images/logo.png" class="avatar motion spin fade">
       <div class="menu-bottom">
-        RefugeeApp
+        Refugees Gießen
       </div>
     </ion-header-bar>
     <ion-content class="stable-bg has-expanded-header">
       <ion-list>
         <ion-item nav-clear menu-close href="#/app/dashboard">
-          Dashboard
+          {{ 'DASH_TITLE' | translate}}
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/guide">
-          Germany guide
+          {{ 'GUIDE_TITLE' | translate}}
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/map">
-          Gießen map
+          {{ 'MAP_TITLE' | translate}}
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/authorities">
-          Public authorities
+          {{ 'PUB_TITLE' | translate}}
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/about">
-          About
+          {{ 'ABOUT_TITLE' | translate}}
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/lang">
+          {{'CHANGELANG_TITLE'|translate}}
         </ion-item>
       </ion-list>
     </ion-content>

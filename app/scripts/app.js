@@ -1,5 +1,5 @@
 'use strict';
-angular.module('refugeeApp', ['ionic', 'ionic-material'])
+angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate'])
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -14,7 +14,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material'])
     });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
     $stateProvider
 
       .state('app', {
@@ -81,9 +81,51 @@ angular.module('refugeeApp', ['ionic', 'ionic-material'])
             controller: 'GuideLineCtrl'
           }
         }
+      })
+
+      .state('app.lang', {
+        url: '/lang',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/langPopover.html',
+            controller: 'LanguageCtrl'
+          }
+        }
       });
 
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/dashboard');
+
+    //german translation
+    $translateProvider.translations('de_DE', {
+      CHANGELANG_TITLE: 'Sprache ändern',
+      DASH_TITLE: 'Übersicht',
+      GUIDE_TITLE: 'Verhaltensregeln',
+      MAP_TITLE: 'Karte',
+      PUB_TITLE: 'Behörden',
+      ABOUT_TITLE: 'Über'
+    });
+
+    //english translation
+    $translateProvider.translations('en_US', {
+      CHANGELANG_TITLE: 'Change language',
+      DASH_TITLE: 'Dashboard',
+      GUIDE_TITLE: 'Guidelines',
+      MAP_TITLE: 'Map',
+      PUB_TITLE: 'Public authorities',
+      ABOUT_TITLE: 'About'
+    });
+
+    //arabic translation
+    /*$translateProvider.translations('en_US', {
+
+    });
+
+    //turkey translation
+    $translateProvider.translations('en_US', {
+
+    });*/
+
+    $translateProvider.preferredLanguage('de_DE');
   });
