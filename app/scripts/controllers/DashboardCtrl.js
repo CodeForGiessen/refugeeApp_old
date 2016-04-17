@@ -10,10 +10,17 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
   ];
 
   $scope.loadContent = function () {
+    //todo check network connection
+    /*if(connection.WIFI){
+      check for new content and load it
+      } else {
+      show up the information popup
+      }
+     */
     var confirmPopup = $ionicPopup.confirm({
-      title: 'Load content',
-      template: 'Are you sure you want to load new content from the server?',
-      cancelText: 'Cancel'
+      title: "{{'DOWN_CONTENT_TITLE'|translate}}",
+      template: "{{'DOWN_CONTENT_TEXT'|translate}}",
+      cancelText: "{{'CANCEL_BUTTON'|translate}}"
     });
 
     confirmPopup.then(function (res) {
@@ -29,30 +36,6 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
       } else {
       }
     });
-  };
-
-  $scope.showLangPopOver = function(){
-    $ionicModal.fromTemplateUrl('/templates/langPopover.html', {
-      scope: $scope,
-      animation: 'slide-in-up'
-    }).then(function(modal) {
-      $scope.modal = modal;
-    });
-
-    $scope.openModal = function(){
-      $scope.modal.show();
-    };
-    $scope.$on('$destroy',function(){
-      $scope.modal.remove();
-    });
-  };
-
-  $scope.changeLang = function (key) {
-    $translate.use(key).then(function (key) {
-      console.log("Sprache zu " + key + " gewechselt.");
-    }, function (key) {
-      console.log("Irgendwas lief schief.");
-    })
   };
 
   // Activate ink for controller
