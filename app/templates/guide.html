@@ -1,7 +1,7 @@
 <ion-view view-title="{{'GUIDE_TITLE'|translate}}">
   <ion-content ng-controller="GuideCtrl as GCtrl">
     <div class="list condensed-space no-padding">
-      <div class="card balanced-bg" ng-repeat="guideline in guides">
+      <div class="card" ng-repeat="guideline in guides">
         <a class="item clear-bg item-bg-image" ng-click="getCategorys($index)">
           <h2>{{guideline.title}}</h2>
           <img ng-src="{{guideline.img}}">
@@ -10,7 +10,6 @@
           <p class="likes" ng-click="plusOne($index)">+ {{guideline.likes}}</p>
         </div>
         </a>
-
       </div>
     </div>
   </ion-content>

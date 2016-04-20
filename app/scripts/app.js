@@ -102,6 +102,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalpre
       LANG_DE: 'Deutsch',
       LANG_EN: 'Englisch',
       LANG_TR: 'Türkisch',
+      LANG_AR: 'Arabisch',
       CHANGELANG_TITLE: 'Sprache ändern',
       DASH_TITLE: 'Übersicht',
       GUIDE_TITLE: 'Verhaltensregeln',
@@ -127,6 +128,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalpre
       LANG_DE: 'German',
       LANG_EN: 'English',
       LANG_TR: 'Turkish',
+      LANG_AR: 'Arabic',
       CHANGELANG_TITLE: 'Change language',
       DASH_TITLE: 'Dashboard',
       GUIDE_TITLE: 'Guidelines',
@@ -149,16 +151,42 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalpre
 
     //turkish translation
     $translateProvider.translations('tr_TR', {
-
+      LANG_DE: 'Alman',
+      LANG_EN: 'İngilizce',
+      LANG_TR: 'Türkçe',
+      LANG_AR: 'Arapça',
+      CHANGELANG_TITLE: 'dili değiştir',
+      DASH_TITLE: 'Özet',
+      GUIDE_TITLE: 'davranış kuralları',
+      MAP_TITLE: 'harita',
+      PUB_TITLE: 'resmi daire',
+      ABOUT_TITLE: 'hakkında',
+      WELCOME_TITLE: 'Gießen`e Hoş geldiniz!',
+      DOWN_CONTENT_TITLE: 'yeni içindekileri indir',
+      DOWN_CONTENT_TEXT: 'WIFI`ye bağlantı kurulamadı. Yinede yeni çindekileri indirmek isdiyormusunuz?',
+      CANCEL_BUTTON: 'iplat',
+      OK_BUTTON: 'OK',
+      FEEDBACK_CARD_TITLE: 'geri bildirim',
+      FEEDBACK_CARD_BUTTON: 'göndermek',
+      FEEDBACK_CARD_NAME: 'adınız',
+      FEEDBACK_CARD_LASTNAME: 'soyadınız ',
+      FEEDBACK_CARD_MESSAGE_PLACEHOLDER: 'mesajınızı buraya yazın...',
+      DEVELOPER_CARD_TITLE: 'geliştirici',
+      LICENSE_CARD_TITLE: 'lisans'
     });
 
     //arabic translation
-    /*$translateProvider.translations('ar_SY', {
+    $translateProvider.translations('ar_SY', {
+      LANG_DE: 'ألماني',
+      LANG_EN: 'إنجليزي',
+      LANG_TR: 'تركي',
+      LANG_AR: 'العربية'
+    });
 
-    });*/
-
-    //set preferred Language translation
-    $translateProvider.preferredLanguage('de_DE');
+    //set preferred language for translation
+    $translateProvider.preferredLanguage('en_US');
+    //set fallback language for translation
+    $translateProvider.fallbackLanguage('en_US');
     //use local storage to store the selected language
     $translateProvider.useLocalStorage();
   });

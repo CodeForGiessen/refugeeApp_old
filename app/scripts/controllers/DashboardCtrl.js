@@ -11,31 +11,43 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
 
   $scope.loadContent = function () {
     //todo check network connection
-    /*if(connection.WIFI){
-      check for new content and load it
-      } else {
-      show up the information popup
-      }
-     */
-    var confirmPopup = $ionicPopup.confirm({
-      title: "{{'DOWN_CONTENT_TITLE'|translate}}",
-      template: "{{'DOWN_CONTENT_TEXT'|translate}}",
-      cancelText: "{{'CANCEL_BUTTON'|translate}}"
-    });
+    if(checkConnection() == Connection.WIFI){
+      console.log("Download content");
+    } else {
+      var confirmPopup = $ionicPopup.confirm({
+        title: "{{'DOWN_CONTENT_TITLE'|translate}}",
+        template: "{{'DOWN_CONTENT_TEXT'|translate}}",
+        cancelText: "{{'CANCEL_BUTTON'|translate}}"
+      });
 
-    confirmPopup.then(function (res) {
-      if (res) {
-        $ionicLoading.show({
-          template: '<div class="loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>'
-        });
+      confirmPopup.then(function (res) {
+        if (res) {
+          $ionicLoading.show({
+            template: '<div class="loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>'
+          });
 
-        $timeout(function () {
-          $ionicLoading.hide();
-        }, 2000);
+          $timeout(function () {
+            $ionicLoading.hide();
+          }, 2000);
 
-      } else {
-      }
-    });
+        } else {
+        }
+      });
+    }
+
+  };
+
+  var checkConnection = function(){
+    var networkState = navigator.connection.type;
+
+    var states =  {};
+    states[Connection.UNKNOWN] = 'Unknown connection';
+    states[Connection.WIFI] = 'WiFi connection';
+    states[Connection.NONE] = 'No network connection';
+
+
+    return networkState;
+
   };
 
   // Activate ink for controller
