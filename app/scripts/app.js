@@ -91,6 +91,16 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalpre
             controller: 'LanguageCtrl'
           }
         }
+      })
+
+      .state('app.infoDetail', {
+        url: '/infoDetail',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/infoDetail.html',
+            controller: 'InfoCtrl'
+          }
+        }
       });
 
 

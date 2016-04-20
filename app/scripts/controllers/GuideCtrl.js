@@ -93,11 +93,7 @@ angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMate
     localStorage.setItem('guides', JSON.stringify($scope.guides));
     $state.go('app.guideline');
   };
-
-  $scope.plusOne = function (index) {
-    $scope.guides[index].likes += 1;
-  };
-
+  
   // Activate ink for controller
   ionicMaterialInk.displayEffect();
 });
