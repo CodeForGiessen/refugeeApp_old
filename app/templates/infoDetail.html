@@ -10,20 +10,18 @@
     </div>-->
 
     <ion-list>
-      <div ng-repeat="info in infos">
+      <div ng-repeat="info in infos[idx].category">
         <ion-item class="item-stable"
                   ng-click="toggleGroup(info)"
                   ng-class="{active: isGroupShown(info)}">
           <i class="icon" ng-class="isGroupShown(info) ? 'ion-minus' : 'ion-plus'"></i>
           &nbsp;
-          {{info.title}}
+          {{info.group}}
         </ion-item>
         <ion-item class="item-accordion"
-                  ng-repeat="item in info.names"
+                  ng-repeat="item in info.items"
                   ng-show="isGroupShown(info)">
           {{item.title}}
-          {{item.location}}
-          {{item.spec}}
         </ion-item>
       </div>
     </ion-list>
