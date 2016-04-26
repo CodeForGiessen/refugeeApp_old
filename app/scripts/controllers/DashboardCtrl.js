@@ -11,9 +11,9 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
 
   $scope.loadContent = function () {
     //todo check network connection
-    if(checkConnection() === Connection.WIFI){
+    /*if(checkConnection() === Connection.WIFI){
       console.log('Download content');
-    } else {
+    } else {*/
       var confirmPopup = $ionicPopup.confirm({
         title: "{{'DOWN_CONTENT_TITLE'|translate}}",
         template: "{{'DOWN_CONTENT_TEXT'|translate}}",
@@ -30,10 +30,9 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
             $ionicLoading.hide();
           }, 2000);
 
-        } else {
-        }
+        } else {}
       });
-    }
+    //}
 
   };
 

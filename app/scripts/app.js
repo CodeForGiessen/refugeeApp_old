@@ -1,5 +1,5 @@
 'use strict';
-angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalprecht.translate'])
+angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalprecht.translate', 'leaflet-directive'])
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -80,6 +80,10 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalpre
             templateUrl: 'templates/guideline.html',
             controller: 'GuideLineCtrl'
           }
+        },
+        params: {
+          idx: -1,
+          title: 'noTitle'
         }
       })
 
@@ -100,6 +104,9 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalpre
             templateUrl: 'templates/infoDetail.html',
             controller: 'InfoCtrl'
           }
+        },
+        params: {
+          index: -1
         }
       });
 

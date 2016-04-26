@@ -1,11 +1,11 @@
 <ion-view view-title="{{'PUB_TITLE'|translate}}">
   <ion-content ng-controller="InfoCtrl">
-    <div class="list" ng-repeat="info in infos">
-      <a class="item item-thumbnail-left" ng-click="goToInfo($index)">
+    <ion-list class="animate-fade-slide-in-right" ng-repeat="info in infos">
+      <ion-item class="item-thumbnail-left" ng-click="goToInfo($index)">
         <img src="images/small-logo1.jpg">
         <h2>{{info.title}}</h2>
         <p>{{info.subtitle}}</p>
-      </a>
-    </div>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

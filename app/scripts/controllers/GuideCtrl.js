@@ -1,5 +1,5 @@
 'use strict';
-angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMaterialInk, $state) {
+angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMaterialInk, ionicMaterialMotion, $state, $timeout) {
   /*var request =  new XMLHttpRequest();
    request.open("GET", "../templates/guides.json", false);
    request.send(null);
@@ -88,12 +88,15 @@ angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMate
 
   $scope.getCategorys = function (index) {
     var title = $scope.guides[index].title;
-    localStorage.setItem('guideTitle', title);
-    localStorage.setItem('index', index);
-    localStorage.setItem('guides', JSON.stringify($scope.guides));
-    $state.go('app.guideline');
+    //localStorage.setItem('guideTitle', title);
+    //localStorage.setItem('index', index);
+    //localStorage.setItem('guides', JSON.stringify($scope.guides));
+    $state.go('app.guideline', {idx: index, title: title});
   };
-  
-  // Activate ink for controller
-  ionicMaterialInk.displayEffect();
+
+  $timeout(function () {
+    // Activate ink for controller
+    ionicMaterialInk.displayEffect();
+    ionicMaterialMotion.blinds();
+  },0);
 });

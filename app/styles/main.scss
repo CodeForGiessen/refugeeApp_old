@@ -1,6 +1,39 @@
-// Robotodraft fonts from google
+/*// Robotodraft fonts from google
 $RobotoDraftFontPath: "../fonts";
 $RobotoDraftFontName: "RobotoDraft";
-$RobotoDraftFontVersion: "1.1.0";
+$RobotoDraftFontVersion: "1.0.0";
 
-@import "../bower_components/robotodraft/sass/robotodraft.scss";
+@import "../bower_components/robotodraft/sass/robotodraft.scss";*/
+
+body {
+  height: auto;
+  min-height: 100%;
+}
+
+/*Collapsible List*/
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+/*Map options*/
+.map-scale {
+  height: 640px;
+}
+
+.scroll, .angular-leaflet-map {
+  height: 100%;
+}
+
+.leaflet-bottom {
+  bottom : 10px;
+}

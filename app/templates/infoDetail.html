@@ -9,8 +9,8 @@
       </a>
     </div>-->
 
-    <ion-list>
-      <div ng-repeat="info in infos[idx].category">
+    <ion-list class="animate-fade-slide-in-right">
+      <div ng-repeat="info in infos[index].category">
         <ion-item class="item-stable"
                   ng-click="toggleGroup(info)"
                   ng-class="{active: isGroupShown(info)}">

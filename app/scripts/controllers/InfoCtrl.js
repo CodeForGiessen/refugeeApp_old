@@ -1,8 +1,13 @@
 'use strict';
 angular.module('refugeeApp').controller('InfoCtrl',
-  function ($scope, $state) {
+  function ($scope, $state, ionicMaterialMotion, $timeout) {
 
-    $scope.idx = localStorage.getItem('index');
+    $timeout(function () {
+      // Activate ink for controller
+      ionicMaterialMotion.fadeSlideInRight();
+    },0);
+
+    $scope.index = $state.params.index;
 
     $scope.infos = [
       {
@@ -100,8 +105,8 @@ angular.module('refugeeApp').controller('InfoCtrl',
 
     $scope.goToInfo = function (index) {
       //todo category rausfiltern und diesen content nur anzeigen
-      localStorage.setItem('index', index);
-      $state.go('app.infoDetail');
+      //localStorage.setItem('index', index);
+      $state.go('app.infoDetail', {index: index});
     };
 
     /*
@@ -116,5 +121,4 @@ angular.module('refugeeApp').controller('InfoCtrl',
       return group.show;
     };
 
-  })
-;
+  });
