@@ -17,6 +17,15 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalpre
   .config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
     $stateProvider
 
+      .state ('start', {
+        url: '/',
+        templateUrl: 'templates/start.html',
+        controller: 'DashboardCtrl',
+        resolve: {
+          
+        }
+      })
+
       .state('app', {
         url: '/app',
         abstract: true,
@@ -110,9 +119,8 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalpre
         }
       });
 
-
-    // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/dashboard');
+      // if none of the above states are matched, use this as the fallback
+      $urlRouterProvider.otherwise('/');
 
     //german translation
     $translateProvider.translations('de_DE', {

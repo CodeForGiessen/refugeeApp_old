@@ -1,5 +1,5 @@
 'use strict';
-angular.module('refugeeApp').controller('MapCtrl', function ($scope) {
+angular.module('refugeeApp').controller('MapCtrl', function ($scope, leafletData) {
 
   $scope.centerGiessen = {
     lat: 50.583732,
@@ -41,4 +41,6 @@ angular.module('refugeeApp').controller('MapCtrl', function ($scope) {
       accessToken: 'pk.eyJ1IjoidG94aWMyMzAyIiwiYSI6ImNpbmcweTlhZzAwOTl2aGx4aHpjYzRydmgifQ.wvgrxPQEtbPxJs2HK0tBTg'
     }
   };
+
+  leafletData.getMap();
 });
