@@ -1,5 +1,5 @@
 'use strict';
-angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stateParams, ionicMaterialMotion, ionicMaterialInk, $ionicPopup, $ionicLoading, $timeout, $ionicModal) {
+angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stateParams, ionicMaterialMotion, ionicMaterialInk, $ionicPopup, $ionicLoading, $timeout) {
 
   $scope.tooltips = [
     {
@@ -15,9 +15,9 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
       console.log('Download content');
     } else {*/
       var confirmPopup = $ionicPopup.confirm({
-        title: "{{'DOWN_CONTENT_TITLE'|translate}}",
-        template: "{{'DOWN_CONTENT_TEXT'|translate}}",
-        cancelText: "{{'CANCEL_BUTTON'|translate}}"
+        title: '{{"DOWN_CONTENT_TITLE"|translate}}',
+        template: '{{"DOWN_CONTENT_TEXT"|translate}}',
+        cancelText: '{{"CANCEL_BUTTON"|translate}}'
       });
 
       confirmPopup.then(function (res) {
@@ -36,7 +36,7 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
 
   };
 
-  var checkConnection = function(){
+  /*var checkConnection = function(){
     var networkState = navigator.connection.type;
 
     var states =  {};
@@ -47,7 +47,7 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
 
     return networkState;
 
-  };
+  };*/
 
   // Activate ink for controller
   ionicMaterialInk.displayEffect();

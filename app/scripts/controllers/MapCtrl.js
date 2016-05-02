@@ -11,21 +11,21 @@ angular.module('refugeeApp').controller('MapCtrl', function ($scope, leafletData
     rathausGi: {
       lat: 50.5837248,
       lng: 8.6774933,
-      message: "Rathaus Gießen",
+      message: 'Rathaus Gießen',
       focus: true,
       draggable: false
     },
     landKreisGi: {
       lat: 50.5749114,
       lng: 8.7074593,
-      message: "Landkreis Gießen",
+      message: 'Landkreis Gießen',
       focus: true,
       draggable: false
     },
     bieberSchaper: {
       lat: 50.5815077,
       lng: 8.6709409,
-      message: "Hausärzte Frau L. Bieber & Dr. M. Schaper",
+      message: 'Hausärzte Frau L. Bieber & Dr. M. Schaper',
       focus: true,
       draggable: false
     }

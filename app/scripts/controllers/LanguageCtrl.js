@@ -2,7 +2,7 @@
  * Controller that helps to translate the user interface text.
  */
 'use strict';
-angular.module('refugeeApp').controller('LanguageCtrl', function($scope, $translate, $ionicPopover, $ionicPopup, $ionicLoading) {
+angular.module('refugeeApp').controller('LanguageCtrl', function($scope, $translate) {
 
   /*$scope.showLangPopOver = function () {
 
@@ -23,9 +23,9 @@ angular.module('refugeeApp').controller('LanguageCtrl', function($scope, $transl
 
   $scope.changeLang = function (key) {
     $translate.use(key).then(function(key){
-      console.log("Sprache zu " + key + " gewechselt.");
+      console.log('Sprache zu ' + key + ' gewechselt.');
     }, function (key) {
-      console.log("Irgendwas lief schief.");
+      console.log('Irgendwas lief schief.' + key);
     });
   };
 });

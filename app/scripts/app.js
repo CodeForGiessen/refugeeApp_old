@@ -1,5 +1,5 @@
 'use strict';
-angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalprecht.translate', 'leaflet-directive'])
+angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate', 'ngCookies', 'leaflet-directive'])
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -16,15 +16,6 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalpre
 
   .config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
     $stateProvider
-
-      .state ('start', {
-        url: '/',
-        templateUrl: 'templates/start.html',
-        controller: 'DashboardCtrl',
-        resolve: {
-          
-        }
-      })
 
       .state('app', {
         url: '/app',
@@ -120,7 +111,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalpre
       });
 
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/app/dashboard');
 
     //german translation
     $translateProvider.translations('de_DE', {
@@ -213,5 +204,5 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'ngCookies', 'pascalpre
     //set fallback language for translation
     $translateProvider.fallbackLanguage('en_US');
     //use local storage to store the selected language
-    $translateProvider.useLocalStorage();
+    //$translateProvider.useLocalStorage();
   });

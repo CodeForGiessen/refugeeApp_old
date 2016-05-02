@@ -5,12 +5,12 @@
   "dependencies": {},
   "devDependencies": {
     "chai": "^3.5.0",
-    "cordova": "^6.1.1",
+    "cordova": "6.1.1",
     "elementtree": "0.1.6",
     "glob": "^7.0.3",
     "grunt": "^1.0.1",
     "grunt-autoprefixer": "^3.0.4",
-    "grunt-concurrent": "2.3.0",
+    "grunt-concurrent": "1.0.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-compass": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
@@ -27,7 +27,7 @@
     "grunt-ng-constant": "^2.0.1",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^3.0.1",
-    "ionic": "^1.6.4",
+    "ionic": "1.7.14",
     "jshint-stylish": "^2.1.0",
     "karma": "^0.13.22",
     "karma-chai": "^0.1.0",
@@ -37,7 +37,7 @@
     "karma-mocha": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.0",
     "load-grunt-tasks": "^3.1.0",
-    "lodash": "^4.11.1",
+    "lodash": "3.10.1",
     "mkdirp": "^0.5.0",
     "mocha": "^2.4.5",
     "ncp": "^2.0.0",
@@ -63,5 +63,6 @@
     "org.apache.cordova.geolocation",
     "org.apache.cordova.camera",
     "org.apache.cordova.inappbrowser"
-  ]
+  ],
+  "cordovaPlatforms": []
 }

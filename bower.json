@@ -9,18 +9,14 @@
     "leaflet": "0.7.7",
     "angular-leaflet-directive": "^0.10.0",
     "angular-translate": "^2.11.0",
-    "angular-cookies": "^1.5.3",
-    "angular-translate-storage-cookie": "^2.11.0",
     "angular-translate-storage-local": "^2.11.0"
   },
   "devDependencies": {
-    "angular-mocks": "~1.5.5",
-    "angular-scenario": "~1.5.5"
+    "angular-mocks": "~1.5.3",
+    "angular-scenario": "~1.5.3"
   },
   "resolutions": {
-    "angular": ">=1.2.26 <1.6",
-    "angular-animate": "1.5.3",
-    "angular-sanitize": "1.5.3",
+    "angular": "1.5.5",
     "ionic": "v1.3.0"
   }
 }

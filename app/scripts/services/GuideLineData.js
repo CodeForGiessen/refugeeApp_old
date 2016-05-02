@@ -1,12 +1,12 @@
 'use strict';
 angular.module('refugeeApp').factory('GuideLineData', ['ENV', '$http', 'KeyCache',
-  function (ENV, $http, KeyCache) {
+  function () {
     //var allGuidesKey = 'guideCache.allGuidelines';
     //var maxAge = ENV.cachesMaxAge.guidelines;
-    var guidesUrl = ENV.apiEndpoint + '';
+    //var guidesUrl = ENV.apiEndpoint + '';
     //var timeout = ENV.requestTimeout;
 
-    var rebuild = function () {
+    /*var rebuild = function () {
 
     };
 
@@ -23,5 +23,5 @@ angular.module('refugeeApp').factory('GuideLineData', ['ENV', '$http', 'KeyCache
     var service = {
       getAll: getAll
     };
-    return service;
+    return service;*/
   }]);
