@@ -42,5 +42,5 @@ angular.module('refugeeApp').controller('MapCtrl', function ($scope, leafletData
     }
   };
 
-  leafletData.getMap();
+  //leafletData.getMap();
 });

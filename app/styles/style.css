@@ -4,6 +4,14 @@
   font-weight: bold;
 }
 
+/* General
+==================================*/
+h1 {
+  color: #FFFFFF;
+  text-shadow: 0 1px 0px #000;
+  font-size: 42px;
+}
+
 h4 {
   color: #116262;
   font-size: 22px;
@@ -209,5 +217,10 @@ p {
 
 .platform-android .popover {
   margin-top: 10px;
+}
+
+.startPage {
+  background-image: url('../images/Giessen_zeughaus.jpg');
+  background-size: cover;
 }
 

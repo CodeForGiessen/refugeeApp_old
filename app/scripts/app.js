@@ -15,6 +15,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate
   })
 
   .config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
+
     $stateProvider
 
       .state('app', {
@@ -97,6 +98,16 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate
         }
       })
 
+      .state('app.start', {
+        url: '/start',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/start.html',
+            controller: 'LanguageCtrl'
+          }
+        }
+      })
+
       .state('app.infoDetail', {
         url: '/infoDetail',
         views: {
@@ -111,7 +122,14 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate
       });
 
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/app/dashboard');
+      //$urlRouterProvider.otherwise('/app/dashboard');
+
+      $urlRouterProvider.otherwise(function ($injector) {
+        var $state = $injector.get('$state');
+
+        var defaultState = window.localStorage.getItem('defaultState') || 'app.start';
+        $state.go(defaultState);
+      });
 
     //german translation
     $translateProvider.translations('de_DE', {
@@ -119,6 +137,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate
       LANG_EN: 'Englisch',
       LANG_TR: 'Türkisch',
       LANG_AR: 'Arabisch',
+      LANG_FR: 'Französisch',
       CHANGELANG_TITLE: 'Sprache ändern',
       DASH_TITLE: 'Übersicht',
       GUIDE_TITLE: 'Verhaltensregeln',
@@ -145,6 +164,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate
       LANG_EN: 'English',
       LANG_TR: 'Turkish',
       LANG_AR: 'Arabic',
+      LANG_FR: 'French',
       CHANGELANG_TITLE: 'Change language',
       DASH_TITLE: 'Dashboard',
       GUIDE_TITLE: 'Guidelines',
@@ -171,6 +191,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate
       LANG_EN: 'İngilizce',
       LANG_TR: 'Türkçe',
       LANG_AR: 'Arapça',
+      LANG_FR: 'Fransız',
       CHANGELANG_TITLE: 'dili değiştir',
       DASH_TITLE: 'Özet',
       GUIDE_TITLE: 'davranış kuralları',
@@ -196,7 +217,17 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate
       LANG_DE: 'ألماني',
       LANG_EN: 'إنجليزي',
       LANG_TR: 'تركي',
-      LANG_AR: 'العربية'
+      LANG_AR: 'العربية',
+      LANG_FR: 'اللغة الفرنسية'
+    });
+
+    //french translation
+    $translateProvider.translations('fr_FR', {
+      LANG_DE: 'allemand',
+      LANG_EN: 'Anglais',
+      LANG_TR: 'turc',
+      LANG_AR: 'arabe',
+      LANG_FR: 'français'
     });
 
     //set preferred language for translation

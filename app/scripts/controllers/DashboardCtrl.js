@@ -1,6 +1,10 @@
 'use strict';
-angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stateParams, ionicMaterialMotion, ionicMaterialInk, $ionicPopup, $ionicLoading, $timeout) {
+angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stateParams, ionicMaterialMotion, ionicMaterialInk, $ionicPopup, $ionicLoading, $timeout, $state, $translate, $ionicHistory) {
 
+  /**
+   *
+   * @type {*[]}
+     */
   $scope.tooltips = [
     {
       title: 'Öffentliches Leben',
@@ -9,6 +13,9 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
     }
   ];
 
+  /**
+   *
+   */
   $scope.loadContent = function () {
     //todo check network connection
     /*if(checkConnection() === Connection.WIFI){
@@ -33,7 +40,27 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
         } else {}
       });
     //}
+  };
 
+  /**
+   *
+   * @param key which is used for the translate module
+     */
+  $scope.setLang = function (key) {
+    var targetState = 'app.dashboard';
+    window.localStorage.setItem('defaultState', targetState);
+
+    $translate.use(key).then(function(key){
+      console.log('Sprache zu ' + key + ' gewechselt.');
+
+      $ionicHistory.nextViewOptions({
+        disableAnimate: true,
+        historyRoot: true
+      });
+      $state.go(targetState);
+    }, function (key) {
+      console.log('Irgendwas lief schief.' + key);
+    });
   };
 
   /*var checkConnection = function(){

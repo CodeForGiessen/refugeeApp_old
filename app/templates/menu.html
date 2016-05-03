@@ -9,8 +9,8 @@
       <ion-nav-buttons side="primary" >
         <button class="button button-icon button-clear ion-android-download" ng-click="loadContent()"></button>
       </ion-nav-buttons>
-      <ion-nav-buttons side="secondary">
-        <button class="button button-icon button-clear ion-earth" ng-click="showLangPopOver()"></button>
+      <ion-nav-buttons side="secondary" ng-controller="LanguageCtrl">
+        <button class="button button-icon button-clear ion-earth" id="menu-popover" ng-click="popover.show($event)"></button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
