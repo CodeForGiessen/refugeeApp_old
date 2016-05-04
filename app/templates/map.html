@@ -1,5 +1,5 @@
 <ion-view view-title="{{'MAP_TITLE'|translate}}">
-  <ion-content ng-controller="MapCtrl">
-      <leaflet center="centerGiessen" markers="markers" defaults="defaults"></leaflet>
+  <ion-content class="map" ng-controller="MapCtrl">
+      <leaflet id="gießenMap" markers="markers" lf-center="center"></leaflet>
   </ion-content>
 </ion-view>

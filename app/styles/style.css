@@ -4,6 +4,11 @@
   font-weight: bold;
 }
 
+/*override bar-balanced*/
+.bar-balanced-900 {
+  background-color: #16a085 !important;
+}
+
 /* General
 ==================================*/
 h1 {

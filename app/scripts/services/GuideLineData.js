@@ -1,27 +1,30 @@
 'use strict';
-angular.module('refugeeApp').factory('GuideLineData', ['ENV', '$http', 'KeyCache',
+angular.module('refugeeApp').factory('GuideLineData', ['$q', 'ENV', '$http', 'KeyCache',
   function () {
     //var allGuidesKey = 'guideCache.allGuidelines';
     //var maxAge = ENV.cachesMaxAge.guidelines;
-    //var guidesUrl = ENV.apiEndpoint + '';
-    //var timeout = ENV.requestTimeout;
+    var guidelinesUrl = ENV.apiEndpoint + '/guides';
+    //todo: ...?lang=en_US oder ?lang=de_DE
+    //todo: ...?category=ID category
+    //todo: ...?lang=en_US&category=ID
+    var timeout = ENV.requestTimeout;
 
-    /*var rebuild = function () {
+    var getAllGuidesToLang = function(lang) {
+      console.log('getAllGuides');
+      return $http.get(guidelinesUrl + '?lang=' + lang,{
+      timeout: timeout
+      })
+        .then(function (response) {
+          var guidelines = response.data.guides;
+          console.log(guidelines);
 
+          return guidelines;
+        });
     };
 
-    var option = {
-      key: allGuidesKey,
-      rebuild: rebuild,
-      maxAge: maxAge
-    };
-
-
-    var getAll = function () {
-
-    };
     var service = {
-      getAll: getAll
+      getAllGuidesToLang: getAllGuidesToLang
     };
-    return service;*/
+
+    return service;
   }]);

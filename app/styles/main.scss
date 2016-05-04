@@ -26,14 +26,9 @@ body {
 }
 
 /*Map options*/
-.map-scale {
-  height: 640px;
+.map {
+  .scroll, .angular-leaflet-map {
+    height: 100%;
+  }
 }
 
-.scroll, .angular-leaflet-map {
-  height: 100%;
-}
-
-.leaflet-bottom {
-  bottom : 10px;
-}
