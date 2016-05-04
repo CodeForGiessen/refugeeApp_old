@@ -1,0 +1,29 @@
+<ion-view view-title="InfoDetail">
+  <ion-content ng-controller="InfoCtrl">
+    <!--<div class="list" ng-repeat="info in infos">
+      <div class="item item-divider">
+        {{info.title}}
+      </div>
+      <a class="item" href="#" ng-repeat="name in info.names">
+        {{name.title}}
+      </a>
+    </div>-->
+
+    <ion-list class="animate-fade-slide-in-right">
+      <div ng-repeat="info in infos[index].category">
+        <ion-item class="item-stable"
+                  ng-click="toggleGroup(info)"
+                  ng-class="{active: isGroupShown(info)}">
+          <i class="icon" ng-class="isGroupShown(info) ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+          {{info.group}}
+        </ion-item>
+        <ion-item class="item-accordion"
+                  ng-repeat="item in info.items"
+                  ng-show="isGroupShown(info)">
+          {{item.title}}
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

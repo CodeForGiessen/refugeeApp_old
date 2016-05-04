@@ -1,38 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>RefugeeApp</title>
 
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <link href="styles/style.css" rel="stylesheet">
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/ionic/release/css/ionic.css" />
+  <link rel="stylesheet" href="bower_components/waves/dist/waves.min.css" />
+  <link rel="stylesheet" href="bower_components/ionic-material/dist/ionic.material.css" />
+  <link rel="stylesheet" href="bower_components/ionic-material/dist/ionic.material.min.css" />
+  <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="styles/ionic.app.css" rel="stylesheet">
-    -->
+ <!-- <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />-->
 
-    <!-- ionic/angularjs js -->
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <!-- endbower -->
-    <!-- endbuild -->
+  <!--own css files-->
+  <!--build:css styles/styles.css-->
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="stylesheet" href="styles/style.css"/>
+  <!--endbuild-->
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">-->
 
-    <!-- your app's js -->
-    <!-- build:js scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers.js"></script>
-    <script src="scripts/configuration.js"></script>
-    <!-- endbuild -->
-  </head>
+  <!-- ionic/angularjs js -->
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/ionic/release/js/ionic.js"></script>
+  <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
+  <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
+  <script src="bower_components/waves/dist/waves.min.js"></script>
+  <script src="bower_components/ionic-material/dist/ionic.material.js"></script>
+  <script src="bower_components/ionic-material/dist/ionic.material.min.js"></script>
+  <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+  <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+  <script src="bower_components/angular-translate/angular-translate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+  <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+  <script src="bower_components/angular-scenario/angular-scenario.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
 
-  <body ng-app="starter">
-    <ion-nav-view></ion-nav-view>
-  </body>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <!-- build:js scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/configuration.js"></script>
+
+  <!-- Controller -->
+  <script src="scripts/controllers/DashboardCtrl.js"></script>
+  <script src="scripts/controllers/GuideCtrl.js"></script>
+  <script src="scripts/controllers/MapCtrl.js"></script>
+  <script src="scripts/controllers/GuideLineCtrl.js"></script>
+  <script src="scripts/controllers/LanguageCtrl.js"></script>
+  <script src="scripts/controllers/InfoCtrl.js"></script>
+  <!-- Services -->
+  <script src="scripts/services/GuideLineData.js"></script>
+  <!-- Directives -->
+  <!-- endbuild -->
+</head>
+<body ng-app="refugeeApp">
+<ion-nav-view></ion-nav-view>
+</body>
 </html>

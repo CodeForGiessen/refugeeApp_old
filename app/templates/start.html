@@ -1,0 +1,16 @@
+<ion-view hide-nav-bar="true">
+  <ion-content class="startPage" ng-controller="DashboardCtrl">
+    <div class="hero no-header flat">
+      <div class="content">
+        <h1>Please select your language</h1>
+      </div>
+    </div>
+    <div class="padding">
+      <button class="button button-full button-assertive ink" ng-click="setLang('de_DE')">Deutsch</button>
+      <button class="button button-full button-energized ink" ng-click="setLang('en_US')">English</button>
+      <button class="button button-full button-calm ink" ng-click="setLang('tr_TR')">Türkçe</button>
+      <button class="button button-full button-positive ink" ng-click="setLang('ar_SY')">العربية</button>
+      <button class="button button-full button-balanced ink" ng-click="setLang('fr_FR')">français</button>
+    </div>
+  </ion-content>
+</ion-view>
