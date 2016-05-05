@@ -6,11 +6,8 @@
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
       </ion-nav-buttons>
-      <ion-nav-buttons side="primary" >
-        <button class="button button-icon button-clear ion-android-download" ng-click="loadContent()"></button>
-      </ion-nav-buttons>
-      <ion-nav-buttons side="secondary" ng-controller="LanguageCtrl">
-        <button class="button button-icon button-clear ion-earth" id="menu-popover" ng-click="popover.show($event)"></button>
+      <ion-nav-buttons side="right" >
+        <button class="button button-icon button-clear ion-android-more-vertical" ng-click="openPopover($event)"></button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
@@ -46,3 +43,18 @@
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>
+
+<script id="popover.html" type="text/ng-template">
+<ion-popover-view>
+  <ion-list>
+    <ion-item class="item-icon-left"
+              ng-click="loadContent();popover.hide()">
+      <i class="icon ion-android-download"></i>Update
+    </ion-item>
+    <ion-item class="item-icon-left"
+              ng-click="";popover.hide()>
+      <i class="icon ion-ios-world"></i>Language
+    </ion-item>
+  </ion-list>
+</ion-popover-view>
+</script>

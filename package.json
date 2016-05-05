@@ -54,6 +54,7 @@
   "scripts": {
     "test": "grunt test"
   },
+  "license": "MIT",
   "cordovaPlugins": [
     "org.apache.cordova.device",
     "org.apache.cordova.console",
@@ -62,7 +63,10 @@
     "org.apache.cordova.network-information",
     "org.apache.cordova.geolocation",
     "org.apache.cordova.camera",
-    "org.apache.cordova.inappbrowser"
+    "org.apache.cordova.inappbrowser",
+    "cordova-plugin-email-composer@0.8.3"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [
+    "android"
+  ]
 }

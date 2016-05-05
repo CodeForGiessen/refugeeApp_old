@@ -6,7 +6,7 @@ angular.module('refugeeApp').controller('MapCtrl', function ($scope) {
       center: {
         lat: 50.583732,
         lng: 8.678344,
-        zoom: 13
+        zoom: 15
       },
       marker: {
         rathausGi: {
@@ -32,7 +32,15 @@ angular.module('refugeeApp').controller('MapCtrl', function ($scope) {
         }
       },
       defaults: {
-        scrollWheelZoom: false
+        scrollWheelZoom: false,
+        tileLayer: 'https://api.mapbox.com/styles/v1/toxic2302/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
+        tileLayerOptions: {
+          attribution: '© Mapbox © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          detectRetina: true,
+          reuseTiles: true,
+          id: 'cinu6ci6p00jmcam0uyhk08y6',
+          accessToken: 'pk.eyJ1IjoidG94aWMyMzAyIiwiYSI6ImNpbmcweTlhZzAwOTl2aGx4aHpjYzRydmgifQ.wvgrxPQEtbPxJs2HK0tBTg'
+        }
       }
     });
 

@@ -11,12 +11,13 @@
     "angular-translate": "^2.11.0",
     "angular-cookies": "1.5.3",
     "angular-translate-storage-cookie": "^2.11.0",
-    "angular-translate-storage-local": "^2.11.0",
+    "angular-translate-storage-local": "^2.11.0"
+  },
+  "devDependencies": {
     "angular-mocks": "1.5.3",
     "angular-scenario": "1.5.3"
   },
-  "devDependencies": {
-  },
+  "license": "MIT",
   "resolutions": {
     "ionic": "v1.3.0"
   }
