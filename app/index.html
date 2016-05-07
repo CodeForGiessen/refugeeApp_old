@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <!--<meta http-equiv="content-security-policy" content="default-src 'self' data: gap: https://ssl.gstatic.com *.ionic.io *.openstreetmap.org *.mapbox.com; style-src
+  'self' 'unsafe-inline'; media-src *; img-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'">-->
   <title>RefugeeApp</title>
 
   <!-- build:css styles/vendor.css -->
@@ -12,11 +14,13 @@
   <link rel="stylesheet" href="bower_components/ionic-material/dist/ionic.material.css" />
   <link rel="stylesheet" href="bower_components/ionic-material/dist/ionic.material.min.css" />
   <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css" />
   <!-- endbower -->
   <!-- endbuild -->
 
- <!-- <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
-  <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />-->
+  <!-- <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+   <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />-->
 
   <!--own css files-->
   <!--build:css styles/styles.css-->
@@ -46,6 +50,7 @@
   <script src="bower_components/angular-cookies/angular-cookies.js"></script>
   <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
   <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+  <script src="bower_components/leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

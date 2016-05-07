@@ -64,7 +64,8 @@
     "org.apache.cordova.geolocation",
     "org.apache.cordova.camera",
     "org.apache.cordova.inappbrowser",
-    "cordova-plugin-email-composer@0.8.3"
+    "cordova-plugin-email-composer@0.8.3",
+    "cordova-plugin-whitelist"
   ],
   "cordovaPlatforms": [
     "android"
