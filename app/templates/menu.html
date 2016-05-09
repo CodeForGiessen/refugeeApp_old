@@ -36,9 +36,6 @@
         <ion-item nav-clear menu-close href="#/app/about">
           {{ 'ABOUT_TITLE' | translate}}
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/lang">
-          {{'CHANGELANG_TITLE'|translate}}
-        </ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>
@@ -52,8 +49,8 @@
       <i class="icon ion-android-download"></i>Update
     </ion-item>
     <ion-item class="item-icon-left"
-              ng-click="";popover.hide()>
-      <i class="icon ion-ios-world"></i>Language
+              ng-click="openModal();popover.hide()">
+      <i class="icon ion-ios-world"></i>Change Language
     </ion-item>
   </ion-list>
 </ion-popover-view>

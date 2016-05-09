@@ -1,5 +1,5 @@
 'use strict';
-angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate', 'ngCookies', 'leaflet-directive'])
+angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate', 'ngCookies', 'leaflet-directive', 'ngCordova', 'ngAnimate', 'toastr'])
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -12,6 +12,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate
         StatusBar.styleDefault();
       }
     });
+
   })
 
   .config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
@@ -69,7 +70,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate
         views: {
           'menuContent': {
             templateUrl: 'templates/aboutPage.html',
-            controller: 'DashboardCtrl'
+            controller: 'AboutCtrl'
           }
         }
       })
@@ -92,7 +93,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate
         url: '/lang',
         views: {
           'menuContent': {
-            templateUrl: 'templates/langPopover.html',
+            templateUrl: 'templates/languageModal.html',
             controller: 'LanguageCtrl'
           }
         }

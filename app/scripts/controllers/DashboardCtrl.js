@@ -1,10 +1,10 @@
 'use strict';
-angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stateParams, ionicMaterialMotion, ionicMaterialInk, $ionicPopup, $ionicLoading, $timeout, $state, $translate, $ionicHistory, $window) {
+angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stateParams, ionicMaterialMotion, ionicMaterialInk, $ionicPopup, $ionicLoading, $timeout, $state, $translate, $ionicHistory, $window, $ionicPopover, $ionicModal, toastr) {
 
   /**
    *
    * @type {*[]}
-     */
+   */
   $scope.tooltips = [
     {
       title: 'Öffentliches Leben',
@@ -17,41 +17,53 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
    *
    */
   $scope.loadContent = function () {
-    //todo check network connection
-    /*if(checkConnection() === Connection.WIFI){
-      console.log('Download content');
-    } else {*/
-      var confirmPopup = $ionicPopup.confirm({
-        title: '{{"DOWN_CONTENT_TITLE"|translate}}',
-        template: '{{"DOWN_CONTENT_TEXT"|translate}}',
-        cancelText: '{{"CANCEL_BUTTON"|translate}}'
-      });
+      if(checkConnection() === Connection.WIFI){
+        console.log('Download content');
 
-      confirmPopup.then(function (res) {
-        if (res) {
-          $ionicLoading.show({
-            template: '<div class="loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>'
-          });
+        toastr.success('Update complete', 'Finished');
+      } else {
+        var confirmPopup = $ionicPopup.confirm({
+          title: '{{"DOWN_CONTENT_TITLE"|translate}}',
+          template: '{{"DOWN_CONTENT_TEXT"|translate}}',
+          cancelText: '{{"CANCEL_BUTTON"|translate}}'
+        });
 
-          $timeout(function () {
-            $ionicLoading.hide();
-          }, 2000);
+        confirmPopup.then(function (res) {
+          if (res) {
+            $ionicLoading.show({
+              template: '<div class="loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>'
+            });
 
-        } else {}
-      });
-    //}
+            $timeout(function () {
+              $ionicLoading.hide();
+              toastr.success('Update complete', 'Finished');
+            }, 2000);
+
+          } else {
+          }
+        });
+      }
+  };
+
+  var checkConnection = function(){
+    var networkState = navigator.connection.type;
+
+    console.log(networkState);
+
+    return networkState;
+
   };
 
   /**
    *
    * @param key which is used for the translate module
-     */
+   */
   $scope.setLang = function (key) {
     var targetState = 'app.dashboard';
     window.localStorage.setItem('defaultState', targetState);
 
-    $translate.use(key).then(function(key){
-      console.log('Sprache zu ' + key + ' gewechselt.');
+    $translate.use(key).then(function (key) {
+      toastr.info('Language set to ' + key);
 
       $ionicHistory.nextViewOptions({
         disableAnimate: true,
@@ -59,67 +71,62 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
       });
       $state.go(targetState);
     }, function (key) {
-      console.log('Irgendwas lief schief.' + key);
+      toastr.error('Ups...can not set your Language to ' + key + '!', 'Error');
     });
   };
 
-  /*var checkConnection = function(){
-    var networkState = navigator.connection.type;
 
-    var states =  {};
-    states[Connection.UNKNOWN] = 'Unknown connection';
-    states[Connection.WIFI] = 'WiFi connection';
-    states[Connection.NONE] = 'No network connection';
+  // .fromTemplateUrl() method
+  $ionicPopover.fromTemplateUrl('popover.html', {
+    scope: $scope
+  }).then(function (popover) {
+    $scope.popover = popover;
+  });
 
-
-    return networkState;
-
-  };*/
-
-  /**
-   *
-   * @param link
-     */
-  $scope.openLink = function(link) {
-    if(link){
-      $window.open(link, '_system');
-    }
+  $scope.openPopover = function ($event) {
+    $scope.popover.show($event);
   };
-
-  /**
-   *
-   * @type {Array}
-     */
-  $scope.contributors = [
-    {name: 'Julian Schmitt', task: 'Service'},
-    {name: 'Florian Kolb', task: 'App und Organisation'},
-    {name: 'Katharina Dort', task: 'Design und Icons'},
-    {name: 'Lukas Leander Rosenstock', task: 'Helpdesk und App'},
-    {name: 'Prof. Dr. Martin Przewloka', task: 'Organisation'},
-    {name: 'Wilfried Jost', task: 'Kommunikation mit Behörden und Flüchtlingslagern'}
-  ];
-
-  /**
-   *
-   */
-  $scope.sendMail = function () {
-    if (window.cordova && cordova.plugins.email) {
-      cordova.plugins.email.open({
-        to: 'flo@floriankolb.de',
-        subject: 'RefugeeApp',
-        body: ''
-      });
-    } else {
-      $ionicPopup.alert({
-        title: 'Info',
-        template: 'Keine Email-Unterstützung!',
-        buttons: [{
-          text: 'Schließen',
-          type: 'button-positive'
-        }]
-      });
-    }
+  $scope.closePopover = function () {
+    $scope.popover.hide();
   };
+  //Cleanup the popover when we're done with it!
+  $scope.$on('$destroy', function () {
+    $scope.popover.remove();
+  });
+  // Execute action on hide popover
+  $scope.$on('popover.hidden', function () {
+    // Execute action
+  });
+  // Execute action on remove popover
+  $scope.$on('popover.removed', function () {
+    // Execute action
+  });
+
+  $ionicModal.fromTemplateUrl('templates/languageModal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function (modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function () {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function () {
+    $scope.modal.hide();
+  };
+  // Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function () {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function () {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function () {
+    // Execute action
+  });
+
 
   // Activate ink for controller
   ionicMaterialInk.displayEffect();

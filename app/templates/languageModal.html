@@ -1,0 +1,17 @@
+<ion-modal-view>
+  <ion-header-bar align-title="left" class="bar-balanced-900">
+    <h3>{{'CHANGELANG_TITLE'|translate}}</h3>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content ng-controller="LanguageCtrl">
+    <ion-list>
+      <ion-item ng-click="changeLang('de_DE');closeModal()">{{'LANG_DE'|translate}}</ion-item>
+      <ion-item ng-click="changeLang('en_US');closeModal()">{{'LANG_EN'|translate}}</ion-item>
+      <ion-item ng-click="changeLang('tr_TR');closeModal()">{{'LANG_TR'|translate}}</ion-item>
+      <ion-item ng-click="changeLang('ar_SY');closeModal()">{{'LANG_AR'|translate}}</ion-item>
+      <ion-item ng-click="changeLang('fr_FR');closeModal()">{{'LANG_FR'|translate}}</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-modal-view>
