@@ -1,17 +1,16 @@
 <ion-modal-view>
-  <ion-header-bar align-title="left" class="bar-balanced-900">
-    <h3>{{'CHANGELANG_TITLE'|translate}}</h3>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeModal()">Close</button>
-    </div>
+  <ion-header-bar class="bar-balanced-900">
+    <h1 class="title title-left">{{'CHANGELANG_TITLE'|translate}}</h1>
+    <button class="button button-clear button-positive" ng-click="closeModal()">Close</button>
   </ion-header-bar>
-  <ion-content ng-controller="LanguageCtrl">
+  <ion-content class="has-header" ng-controller="LanguageCtrl">
     <ion-list>
-      <ion-item ng-click="changeLang('de_DE');closeModal()">{{'LANG_DE'|translate}}</ion-item>
-      <ion-item ng-click="changeLang('en_US');closeModal()">{{'LANG_EN'|translate}}</ion-item>
-      <ion-item ng-click="changeLang('tr_TR');closeModal()">{{'LANG_TR'|translate}}</ion-item>
-      <ion-item ng-click="changeLang('ar_SY');closeModal()">{{'LANG_AR'|translate}}</ion-item>
-      <ion-item ng-click="changeLang('fr_FR');closeModal()">{{'LANG_FR'|translate}}</ion-item>
+      <ion-item class="item-icon-left" ng-click="changeLang('de_DE');closeModal()"><i class="flag-icon flag-icon-de"></i> {{'LANG_DE'|translate}}</ion-item>
+      <ion-item class="item-icon-left" ng-click="changeLang('en_US');closeModal()"><i class="flag-icon flag-icon-us"></i> {{'LANG_EN'|translate}}</ion-item>
+      <ion-item class="item-icon-left" ng-click="changeLang('ar_SY');closeModal()"><i class="flag-icon flag-icon-sy"></i> {{'LANG_AR'|translate}}</ion-item>
+      <ion-item class="item-icon-left" ng-click="changeLang('fa_AF');closeModal()"><i class="flag-icon flag-icon-af"></i> {{'LANG_AF'|translate}}</ion-item>
+      <ion-item class="item-icon-left" ng-click="changeLang('tr_TR');closeModal()"><i class="flag-icon flag-icon-tr"></i> {{'LANG_TR'|translate}}</ion-item>
+      <ion-item class="item-icon-left" ng-click="changeLang('fr_FR');closeModal()"><i class="flag-icon flag-icon-fr"></i> {{'LANG_FR'|translate}}</ion-item>
     </ion-list>
   </ion-content>
 </ion-modal-view>

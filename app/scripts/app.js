@@ -15,7 +15,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
 
   })
 
-  .config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $translateProvider, toastrConfig) {
 
     $stateProvider
 
@@ -135,10 +135,11 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
     //german translation
     $translateProvider.translations('de_DE', {
       LANG_DE: 'Deutsch',
-      LANG_EN: 'Englisch',
-      LANG_TR: 'Türkisch',
-      LANG_AR: 'Arabisch',
-      LANG_FR: 'Französisch',
+      LANG_EN: 'English',
+      LANG_TR: 'Türkçe',
+      LANG_AR: 'العربية',
+      LANG_FR: 'français',
+      LANG_AF: 'فارسی',
       CHANGELANG_TITLE: 'Sprache ändern',
       DASH_TITLE: 'Übersicht',
       GUIDE_TITLE: 'Verhaltensregeln',
@@ -156,16 +157,18 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
       FEEDBACK_CARD_LASTNAME: 'Name',
       FEEDBACK_CARD_MESSAGE_PLACEHOLDER: 'Geben sie hier ihre Nachricht ein...',
       DEVELOPER_CARD_TITLE: 'Entwickler',
-      LICENSE_CARD_TITLE: 'Lizenz'
+      LICENSE_CARD_TITLE: 'Lizenz',
+      CHANG_LANG_INFO: 'Wenn sie die Sprache ändern wird der gesamte Inhalt neu heruntergeladen.'
     });
 
     //english translation
     $translateProvider.translations('en_US', {
-      LANG_DE: 'German',
+      LANG_DE: 'Deutsch',
       LANG_EN: 'English',
-      LANG_TR: 'Turkish',
-      LANG_AR: 'Arabic',
-      LANG_FR: 'French',
+      LANG_TR: 'Türkçe',
+      LANG_AR: 'العربية',
+      LANG_FR: 'français',
+      LANG_AF: 'فارسی',
       CHANGELANG_TITLE: 'Change language',
       DASH_TITLE: 'Dashboard',
       GUIDE_TITLE: 'Guidelines',
@@ -183,16 +186,18 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
       FEEDBACK_CARD_LASTNAME: 'Last Name',
       FEEDBACK_CARD_MESSAGE_PLACEHOLDER: 'Your message here...',
       DEVELOPER_CARD_TITLE: 'Developer',
-      LICENSE_CARD_TITLE: 'License'
+      LICENSE_CARD_TITLE: 'License',
+      CHANG_LANG_INFO: 'Please notice! When you change the language then it downloads the complete content.'
     });
 
     //turkish translation
     $translateProvider.translations('tr_TR', {
-      LANG_DE: 'Alman',
-      LANG_EN: 'İngilizce',
+      LANG_DE: 'Deutsch',
+      LANG_EN: 'English',
       LANG_TR: 'Türkçe',
-      LANG_AR: 'Arapça',
-      LANG_FR: 'Fransız',
+      LANG_AR: 'العربية',
+      LANG_FR: 'français',
+      LANG_AF: 'فارسی',
       CHANGELANG_TITLE: 'dili değiştir',
       DASH_TITLE: 'Özet',
       GUIDE_TITLE: 'davranış kuralları',
@@ -215,20 +220,32 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
 
     //arabic translation
     $translateProvider.translations('ar_SY', {
-      LANG_DE: 'ألماني',
-      LANG_EN: 'إنجليزي',
-      LANG_TR: 'تركي',
+      LANG_DE: 'Deutsch',
+      LANG_EN: 'English',
+      LANG_TR: 'Türkçe',
       LANG_AR: 'العربية',
-      LANG_FR: 'اللغة الفرنسية'
+      LANG_FR: 'français',
+      LANG_AF: 'فارسی'
     });
 
     //french translation
     $translateProvider.translations('fr_FR', {
-      LANG_DE: 'allemand',
-      LANG_EN: 'Anglais',
-      LANG_TR: 'turc',
-      LANG_AR: 'arabe',
-      LANG_FR: 'français'
+      LANG_DE: 'Deutsch',
+      LANG_EN: 'English',
+      LANG_TR: 'Türkçe',
+      LANG_AR: 'العربية',
+      LANG_FR: 'français',
+      LANG_AF: 'فارسی'
+    });
+
+    //farsi translation
+    $translateProvider.translations('fa_AF', {
+      LANG_DE: 'Deutsch',
+      LANG_EN: 'English',
+      LANG_TR: 'Türkçe',
+      LANG_AR: 'العربية',
+      LANG_FR: 'français',
+      LANG_AF: 'فارسی'
     });
 
     //set preferred language for translation
@@ -237,4 +254,12 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
     $translateProvider.fallbackLanguage('en_US');
     //use local storage to store the selected language
     $translateProvider.useLocalStorage();
+
+    angular.extend(toastrConfig, {
+      autoDismiss: true,
+      containerId: 'toast-container',
+      newestOnTop: true,
+      positionClass: 'toast-bottom-center',
+      target: 'body'
+    });
   });

@@ -5,21 +5,32 @@ $RobotoDraftFontVersion: "1.0.0";
 
 @import "../bower_components/robotodraft/sass/robotodraft.scss";*/
 
+$primary-color: #16a085;
+$secondary-color: #FFFFFF;
+$accent-color: #555555;
+$secondary-accent-color: #CCCCCC;
+
 body {
   height: auto;
   min-height: 100%;
 }
 
 /*Collapsible List*/
-.list .item.item-accordion {
-  line-height: 38px;
-  padding-top: 0;
-  padding-bottom: 0;
-  transition: 0.09s all linear;
+.list {
+  .item {
+    .item-accordion {
+      line-height: 38px;
+      padding-top: 0;
+      padding-bottom: 0;
+      transition: 0.09s all linear;
+    }
+  }
 }
+
 .list .item.item-accordion.ng-hide {
   line-height: 0px;
 }
+
 .list .item.item-accordion.ng-hide-add,
 .list .item.item-accordion.ng-hide-remove {
   display: block !important;
@@ -41,4 +52,5 @@ body {
     }
   }
 }
+
 
