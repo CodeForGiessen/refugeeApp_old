@@ -4,22 +4,6 @@
 'use strict';
 angular.module('refugeeApp').controller('LanguageCtrl', function($scope, $translate, $ionicPopover, toastr) {
 
-  /*$scope.showLangPopOver = function () {
-
-    $ionicPopover.fromTemplateUrl('languageModal.html', {
-      scope: $scope
-    }).then(function (popover) {
-      $scope.popover = popover;
-    });
-
-    $scope.openPopover = function () {
-      $scope.$parent.popover.show();
-    };
-    $scope.closePopover = function () {
-      $scope.popover.hide();
-    };
-  };*/
-
   // .fromTemplate() method
   var template =  '<ion-popover-view>' +
     '<ion-header-bar>' +
@@ -41,7 +25,10 @@ angular.module('refugeeApp').controller('LanguageCtrl', function($scope, $transl
     $scope.popover.remove();
   });
 
-
+  /**
+   *
+   * @param key
+     */
   $scope.changeLang = function (key) {
     $translate.use(key).then(function(key){
       toastr.info('You have changed the language to ' + key ,'Success');

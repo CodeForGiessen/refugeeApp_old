@@ -43,7 +43,8 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'development',
-            apiEndpoint: 'http://dev.yoursite.com:10000/'
+            apiEndpoint: 'http://homesvr.spdns.de:8080/api/v1',
+            requestTimeout: 60000
           }
         }
       },
@@ -51,7 +52,8 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiEndpoint: 'http://api.yoursite.com/'
+            apiEndpoint: 'http://homesvr.spnds.de:8080/api/v1',
+            requestTimeout: 60000
           }
         }
       }

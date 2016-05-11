@@ -1,5 +1,5 @@
 'use strict';
-angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stateParams, ionicMaterialMotion, ionicMaterialInk, $ionicPopup, $ionicLoading, $timeout, $state, $translate, $ionicHistory, $window, $ionicPopover, $ionicModal, toastr) {
+angular.module('refugeeApp').controller('DashboardCtrl', function (GuideLineData, $scope, $stateParams, ionicMaterialMotion, ionicMaterialInk, $ionicPopup, $ionicLoading, $timeout, $state, $translate, $ionicHistory, $window, $ionicPopover, $ionicModal, toastr) {
 
   /**
    *
@@ -18,8 +18,8 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
    */
   $scope.loadContent = function () {
       if(checkConnection() === Connection.WIFI){
-        console.log('Download content');
-
+        //todo get all necessary data
+        //GuideLineData.getAllGuidesToLang();
         toastr.success('Update complete', 'Finished');
       } else {
         var confirmPopup = $ionicPopup.confirm({
@@ -45,13 +45,11 @@ angular.module('refugeeApp').controller('DashboardCtrl', function ($scope, $stat
       }
   };
 
+  /**
+   *
+   */
   var checkConnection = function(){
-    var networkState = navigator.connection.type;
-
-    console.log(networkState);
-
-    return networkState;
-
+    return navigator.connection.type;
   };
 
   /**

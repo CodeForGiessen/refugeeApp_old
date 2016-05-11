@@ -1,5 +1,5 @@
 'use strict';
-angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate', 'ngCookies', 'leaflet-directive', 'ngCordova', 'ngAnimate', 'toastr'])
+angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 'pascalprecht.translate',  'leaflet-directive', 'ngCordova', 'ngAnimate', 'toastr'])
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -236,5 +236,5 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'pascalprecht.translate
     //set fallback language for translation
     $translateProvider.fallbackLanguage('en_US');
     //use local storage to store the selected language
-    //$translateProvider.useLocalStorage();
+    $translateProvider.useLocalStorage();
   });
