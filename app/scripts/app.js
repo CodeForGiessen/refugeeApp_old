@@ -158,7 +158,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
       FEEDBACK_CARD_MESSAGE_PLACEHOLDER: 'Geben sie hier ihre Nachricht ein...',
       DEVELOPER_CARD_TITLE: 'Entwickler',
       LICENSE_CARD_TITLE: 'Lizenz',
-      CHANG_LANG_INFO: 'Wenn sie die Sprache ändern wird der gesamte Inhalt neu heruntergeladen.'
+      CHANGE_LANG_INFO: 'Wenn sie die Sprache ändern wird der gesamte Inhalt neu heruntergeladen.'
     });
 
     //english translation
@@ -187,7 +187,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
       FEEDBACK_CARD_MESSAGE_PLACEHOLDER: 'Your message here...',
       DEVELOPER_CARD_TITLE: 'Developer',
       LICENSE_CARD_TITLE: 'License',
-      CHANG_LANG_INFO: 'Please notice! When you change the language then it downloads the complete content.'
+      CHANGE_LANG_INFO: 'Please notice! When you change the language then it downloads the complete content.'
     });
 
     //turkish translation

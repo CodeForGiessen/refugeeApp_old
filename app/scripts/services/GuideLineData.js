@@ -1,6 +1,6 @@
 'use strict';
 angular.module('refugeeApp').factory('GuideLineData', ['$q', 'ENV', '$http',
-  function ($http, ENV) {
+  function ($q, ENV, $http) {
     var guidelinesUrl = ENV.apiEndpoint + '/guides';
     //todo: ...?lang=en_US oder ?lang=de_DE
     //todo: ...?category=ID category
@@ -14,13 +14,14 @@ angular.module('refugeeApp').factory('GuideLineData', ['$q', 'ENV', '$http',
        */
     var getAllGuidesToLang = function(lang) {
       console.log('getAllGuides');
-      return $http.get(guidelinesUrl + '?lang=' + lang,{
+      return $http.get(guidelinesUrl + '?lang=' + lang +'&published=true',{
       timeout: timeout
       })
         .then(function (response) {
           var guidelines = response.data.guides;
           console.log(guidelines);
-          localstorage().setItem('guidelines',guidelines);
+          localStorage.setItem('guidelines', JSON.stringify(guidelines));
+          toastr.info('Language set to ' + lang);
 
           return guidelines;
         });
