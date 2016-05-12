@@ -1,10 +1,8 @@
 'use strict';
-angular.module('refugeeApp').factory('GuideLineData', ['$q', 'ENV', '$http',
-  function ($q, ENV, $http) {
+angular.module('refugeeApp').factory('GuideLineData', ['$q', 'ENV', '$http', 'toastr',
+  function ($q, ENV, $http, toastr) {
     var guidelinesUrl = ENV.apiEndpoint + '/guides';
-    //todo: ...?lang=en_US oder ?lang=de_DE
-    //todo: ...?category=ID category
-    //todo: ...?lang=en_US&category=ID
+    var categoriesUrl = ENV.apiEndpoint + '/categories';
     var timeout = ENV.requestTimeout;
 
     /**
@@ -13,18 +11,33 @@ angular.module('refugeeApp').factory('GuideLineData', ['$q', 'ENV', '$http',
      * @returns {*}
        */
     var getAllGuidesToLang = function(lang) {
-      console.log('getAllGuides');
+      //todo: check if the statuscode is 304...
       return $http.get(guidelinesUrl + '?lang=' + lang +'&published=true',{
       timeout: timeout
       })
         .then(function (response) {
           var guidelines = response.data.guides;
-          console.log(guidelines);
-          localStorage.setItem('guidelines', JSON.stringify(guidelines));
+          localStorage.setItem('guidelines_' + lang, JSON.stringify(guidelines));
           toastr.info('Language set to ' + lang);
 
           return guidelines;
         });
+    };
+
+      /**
+       *
+       * @param lang
+       */
+    var getAllCategories = function () {
+        return $http.get(categoriesUrl, {
+          timeout: timeout
+        })
+          .then(function (response) {
+            var categories = response.data.categories;
+            localStorage.setItem('categories', JSON.stringify(categories));
+
+            return categories;
+          });
     };
 
     /**
@@ -35,7 +48,12 @@ angular.module('refugeeApp').factory('GuideLineData', ['$q', 'ENV', '$http',
       /**
        *
        */
-      getAllGuidesToLang: getAllGuidesToLang
+      getAllGuidesToLang: getAllGuidesToLang,
+
+        /**
+         *
+         */
+      getAllCategories: getAllCategories
     };
 
     return service;

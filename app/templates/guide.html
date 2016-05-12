@@ -1,10 +1,9 @@
 <ion-view view-title="{{'GUIDE_TITLE'|translate}}">
   <ion-content ng-controller="GuideCtrl as GCtrl">
     <div class="list condensed-space no-padding animate-blinds">
-      <div class="card" ng-repeat="guideline in guides">
-        <a class="item clear-bg item-bg-image" ng-click="getCategorys($index)">
-          <h2>{{guideline.title}}</h2>
-          <img ng-src="{{guideline.img}}">
+      <div class="card dark-bg" ng-repeat="category in categories">
+          <a class="item clear-bg item-bg-image" ui-sref="app.guideline({idx: category._id, title: category.text[lang]})">
+          <h2>{{category.text[lang]}}</h2>
         </a>
       </div>
     </div>

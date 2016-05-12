@@ -18,11 +18,10 @@ angular.module('refugeeApp').controller('DashboardCtrl', function (GuideLineData
    */
   $scope.loadContent = function () {
       //if(checkConnection() === Connection.WIFI){
-        //todo get all necessary data
         GuideLineData.getAllGuidesToLang('de_DE');
-        toastr.success('Update complete', 'Finished');
+        GuideLineData.getAllCategories();
       //} else {
-        var confirmPopup = $ionicPopup.confirm({
+        /*var confirmPopup = $ionicPopup.confirm({
           title: '{{"DOWN_CONTENT_TITLE"|translate}}',
           template: '{{"DOWN_CONTENT_TEXT"|translate}}',
           cancelText: '{{"CANCEL_BUTTON"|translate}}'
@@ -41,7 +40,7 @@ angular.module('refugeeApp').controller('DashboardCtrl', function (GuideLineData
 
           } else {
           }
-        });
+        });*/
       };
   //};
 
@@ -63,6 +62,7 @@ angular.module('refugeeApp').controller('DashboardCtrl', function (GuideLineData
     $translate.use(key)
       .then(function (key) {
         GuideLineData.getAllGuidesToLang(key);
+        GuideLineData.getAllCategories();
 
       $ionicHistory.nextViewOptions({
         disableAnimate: true,
