@@ -2,7 +2,7 @@
  * Controller that helps to translate the user interface text.
  */
 'use strict';
-angular.module('refugeeApp').controller('LanguageCtrl', function($scope, $translate, $ionicPopover, toastr) {
+angular.module('refugeeApp').controller('LanguageCtrl', function($scope, $translate, $ionicPopover, toastr, GuideLineData) {
 
   // .fromTemplate() method
   var template =  '<ion-popover-view>' +
@@ -31,6 +31,10 @@ angular.module('refugeeApp').controller('LanguageCtrl', function($scope, $transl
      */
   $scope.changeLang = function (key) {
     $translate.use(key).then(function(key){
+      if(!localStorage.getItem('guidelines_'+key)){
+        GuideLineData.getAllCategories();
+        GuideLineData.getAllGuidesToLang(key);
+      }
       toastr.info('You have changed the language to ' + key ,'Success');
     }, function (key) {
       toastr.error('Tried to set the language ' + key,'Error');

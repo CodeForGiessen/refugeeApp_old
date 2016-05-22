@@ -1,9 +1,11 @@
 <ion-view view-title="{{'GUIDE_TITLE'|translate}}">
   <ion-content ng-controller="GuideCtrl as GCtrl">
+   <!-- <ion-refresher pulling-text="Pull to refresh..." on-refresh="reload()" spinner="ripple">
+    </ion-refresher>-->
     <div class="list condensed-space no-padding animate-blinds">
-      <div class="card dark-bg" ng-repeat="category in categories">
-          <a class="item clear-bg item-bg-image" ui-sref="app.guideline({idx: category._id, title: category.text[lang]})">
-          <h2>{{category.text[lang]}}</h2>
+      <div class="card dark-bg" ng-repeat="category in categories" ng-hide="!category.text[langKey]">
+          <a class="item clear-bg item-bg-image" ui-sref="app.guideline({idx: category._id, title: category.text[langKey]})">
+          <h2>{{category.text[langKey]}}</h2>
         </a>
       </div>
     </div>

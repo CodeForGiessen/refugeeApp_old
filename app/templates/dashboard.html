@@ -4,10 +4,10 @@
       <h2 class="text-center">{{'WELCOME_TITLE'|translate}}</h2>
     </div>
     <div class="item card-item">
-      <div class="card stable-bg ink ink-dark" ng-repeat="tip in tooltips">
+      <div class="card stable-bg ink ink-dark">
         <div class="item item-text-wrap">
-          <strong>{{tip.title}}</strong>
-          <p>{{tip.text}}</p>
+          <strong>{{getMotd.title}}</strong>
+          <p>{{getMotd.text}}</p>
           <div class="card-footer text-right">
             <p>Message of the day</p>
           </div>

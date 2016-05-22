@@ -392,11 +392,11 @@ module.exports = function (grunt) {
       unit: {
         // Change this to 'Chrome', 'Firefox', etc. Note that you will need
         // to install a karma launcher plugin for browsers other than Chrome.
-        browsers: ['Firefox'],
+        browsers: ['Firefox','Chrome'],
         background: true
       },
       continuous: {
-        browsers: ['Firefox'],
+        browsers: ['Chrome'],
         singleRun: true
       }
     },

@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="de.codefor.giessen.RefugeeApp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Refugees Gießen</name>
+<widget id="de.codefor.giessen.refugeeApp" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Refugees Giessen</name>
   <description>
-        A sample Apache Cordova application that responds to the deviceready event.
-    </description>
-  <author email="flo@floriankolb.de" href="http://codefor.de/giessen">
+    Diese App soll allen Flüchtlingen helfen, die in Giessen ankommen.
+  </description>
+  <author email="codeforgi@gmail.com" href="http://codefor.de/giessen">
         Code for Germany - OK Lab Gießen
     </author>
   <content src="index.html"/>
   <access origin="*"/>
-  <!--<access origin="*.ionic.io"/>
-  <access origin="*.openstreetmap.org"/>
-  <access origin="*.mapbox.com"/>-->
   <platform name="android">
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
     <icon src="resources/android/icon/drawable-mdpi-icon.png" density="mdpi"/>

@@ -1,9 +1,11 @@
 'use strict';
-angular.module('refugeeApp').factory('GuideLineData', ['$q', 'ENV', '$http', 'toastr',
-  function ($q, ENV, $http, toastr) {
+angular.module('refugeeApp').factory('GuideLineData', ['$q', 'ENV', '$http', 'toastr', '$ionicLoading',
+  function ($q, ENV, $http, toastr, $ionicLoading) {
     var guidelinesUrl = ENV.apiEndpoint + '/guides';
     var categoriesUrl = ENV.apiEndpoint + '/categories';
     var timeout = ENV.requestTimeout;
+    var lastModified = localStorage.getItem('guidelinesLastModified');
+    var reqOptions = {};
 
     /**
      *
@@ -11,17 +13,56 @@ angular.module('refugeeApp').factory('GuideLineData', ['$q', 'ENV', '$http', 'to
      * @returns {*}
        */
     var getAllGuidesToLang = function(lang) {
-      //todo: check if the statuscode is 304...
+      $ionicLoading.show();
+      if(lastModified){
+        reqOptions.headers = {'If-Modified-Since': lastModified};
+      }
       return $http.get(guidelinesUrl + '?lang=' + lang +'&published=true',{
       timeout: timeout
       })
         .then(function (response) {
-          var guidelines = response.data.guides;
-          localStorage.setItem('guidelines_' + lang, JSON.stringify(guidelines));
-          toastr.info('Language set to ' + lang);
+          //todo nur runterladen wenn es seit dem letzten mal änderungen gibt
+          if(response.status===200 && angular.isArray(response.data.guides)) {
+            console.log(response.status);
+            console.log(response.statusText);
+            console.log(response.headers);
+            var guidelines = response.data.guides;
+            localStorage.setItem('guidelines_' + lang, JSON.stringify(guidelines));
+            var respHeaders = response.headers();
+            localStorage.setItem('guidelinesLastModified', respHeaders['last-modified']);
+            toastr.success('New data has been downloaded!','Update complete');
 
-          return guidelines;
+            //return guidelines;
+          } else {
+            console.log('not-modified');
+            toastr.info('Already up-to-date. No update necessary');
+          }
+        })
+        .finally(function(){
+          $ionicLoading.hide();
         });
+
+      /*if (lastModified){
+        reqOptions.headers = {'If-Modified-Since': lastModified}
+      }
+
+      var promise = $http.get(guidelinesUrl + '?lang=' + lang + '&published=true', reqOptions);
+
+      promise.success(function (data, status, headers, config) {
+        if(status === 200 && angular.isArray(data)){
+          console.log('')
+          //var guidelines = data;
+          localStorage.setItem('guidelines_' + lang, JSON.stringify(data));
+          toastr.info('Language set to ' + lang);
+          var respHeaders = headers();
+          localStorage.setItem('guidelinesLastModified' , respHeaders['last-modified']);
+
+          return status;
+        }
+      })
+        .error(function (data,status,headers, config){
+          return status
+        });*/
     };
 
       /**
@@ -33,10 +74,12 @@ angular.module('refugeeApp').factory('GuideLineData', ['$q', 'ENV', '$http', 'to
           timeout: timeout
         })
           .then(function (response) {
-            var categories = response.data.categories;
-            localStorage.setItem('categories', JSON.stringify(categories));
+            if(response.status===200) {
+              var categories = response.data.categories;
+              localStorage.setItem('categories', JSON.stringify(categories));
 
-            return categories;
+              return categories;
+            }
           });
     };
 

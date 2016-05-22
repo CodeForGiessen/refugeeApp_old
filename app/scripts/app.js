@@ -26,6 +26,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
       })
 
       .state('app.dashboard', {
+        cache: false,
         url: '/dashboard',
         views: {
           'menuContent': {
@@ -36,6 +37,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
       })
 
       .state('app.guide', {
+        cache: false,
         url: '/guide',
         views: {
           'menuContent': {
@@ -144,7 +146,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
       DASH_TITLE: 'Übersicht',
       GUIDE_TITLE: 'Verhaltensregeln',
       MAP_TITLE: 'Karte',
-      PUB_TITLE: 'Behörden',
+      PUB_TITLE: 'Informationen',
       ABOUT_TITLE: 'Über',
       WELCOME_TITLE: 'Herzlich willkommen in Gießen',
       DOWN_CONTENT_TITLE: 'Neue Inhalte herunterladen',
@@ -173,7 +175,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
       DASH_TITLE: 'Dashboard',
       GUIDE_TITLE: 'Guidelines',
       MAP_TITLE: 'Map',
-      PUB_TITLE: 'Public authorities',
+      PUB_TITLE: 'Information',
       ABOUT_TITLE: 'About',
       WELCOME_TITLE: 'Welcome to Gießen',
       DOWN_CONTENT_TITLE: 'Download new Content',
@@ -187,7 +189,7 @@ angular.module('refugeeApp', ['ionic', 'ionic-material', 'config', 'ngCookies', 
       FEEDBACK_CARD_MESSAGE_PLACEHOLDER: 'Your message here...',
       DEVELOPER_CARD_TITLE: 'Developer',
       LICENSE_CARD_TITLE: 'License',
-      CHANGE_LANG_INFO: 'Please notice! When you change the language then it downloads the complete content.'
+      CHANGE_LANG_INFO: 'Please notice! When you change the language then it will downloads new content.'
     });
 
     //turkish translation

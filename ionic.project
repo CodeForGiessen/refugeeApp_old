@@ -1,4 +1,10 @@
 {
   "name": "refugeeApp",
-  "app_id": ""
+  "app_id": "",
+  "proxies":[
+  {
+  "path": "/api/v1",
+  "proxyUrl": "http://homesvr.spdns.de:8080/api/v1"
+  }
+   ]
 }

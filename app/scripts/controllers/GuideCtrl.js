@@ -1,19 +1,34 @@
 'use strict';
-angular.module('refugeeApp').controller('GuideCtrl', function ($scope, ionicMaterialInk, ionicMaterialMotion, $state, $timeout) {
+angular.module('refugeeApp').controller('GuideCtrl', function (GuideLineService, $q, $scope, ionicMaterialInk, ionicMaterialMotion, $state, $timeout, $ionicLoading) {
 
-  $scope.lang = localStorage.getItem('NG_TRANSLATE_LANG_KEY');
-  var storedCategories = localStorage.getItem('categories');
-  $scope.categories = JSON.parse(storedCategories);
-  /**
-   *
-   * @param id
-     */
-  $scope.getCategorys = function (title) {
-    //var title = $scope.guides[index].title;
-    console.log(title);
-    $state.go('app.guideline', {idx: id, title: title});
+  //$scope.langKey = GuideLineService.getLangKey();
+  //$scope.categories = GuideLineService.findAllCategories();
+
+  var reload = function(){
+    $ionicLoading.show();
+
+    $q.all([
+      GuideLineService.getLangKey(),
+      GuideLineService.findAllCategories()
+    ])
+    .then (function (res) {
+      var langKey = res[0];
+      var categories = res[1];
+      $scope.langKey = langKey;
+      $scope.categories = categories;
+      console.log('then...');
+    })
+      .finally(function(){
+        $ionicLoading.hide();
+        //$scope.$broadcast('scroll.refreshComplete');
+        console.log('finally...');
+        });
   };
 
+  $scope.reload = reload();
+
+  $scope.$on('$ionicView.enter', reload);
+  
   /**
    *
    */

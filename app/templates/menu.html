@@ -21,20 +21,20 @@
     </ion-header-bar>
     <ion-content class="stable-bg has-expanded-header">
       <ion-list>
-        <ion-item nav-clear menu-close href="#/app/dashboard">
-          {{ 'DASH_TITLE' | translate}}
+        <ion-item nav-clear menu-close class="item-icon-left" href="#/app/dashboard">
+          <i class="icon ion-android-home"></i> {{ 'DASH_TITLE' | translate}}
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/guide">
-          {{ 'GUIDE_TITLE' | translate}}
+        <ion-item nav-clear menu-close class="item-icon-left" href="#/app/guide">
+          <i class="icon ion-android-bulb"></i> {{ 'GUIDE_TITLE' | translate}}
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/map">
-          {{ 'MAP_TITLE' | translate}}
+        <ion-item nav-clear menu-close class="item-icon-left" href="#/app/map">
+          <i class="icon ion-android-map"></i> {{ 'MAP_TITLE' | translate}}
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/authorities">
-          {{ 'PUB_TITLE' | translate}}
+        <ion-item nav-clear menu-close class="item-icon-left" href="#/app/authorities">
+          <i class="icon ion-android-list"></i> {{ 'PUB_TITLE' | translate}}
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/about">
-          {{ 'ABOUT_TITLE' | translate}}
+        <ion-item nav-clear menu-close class="item-icon-left" href="#/app/about">
+          <i class="icon ion-android-people"></i> {{ 'ABOUT_TITLE' | translate}}
         </ion-item>
       </ion-list>
     </ion-content>
@@ -50,7 +50,7 @@
     </ion-item>
     <ion-item class="item-icon-left"
               ng-click="openModal();popover.hide()">
-      <i class="icon ion-ios-world"></i> Change Language
+      <i class="icon ion-android-globe"></i> Change Language
     </ion-item>
   </ion-list>
 </ion-popover-view>
