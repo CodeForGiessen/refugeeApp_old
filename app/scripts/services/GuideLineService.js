@@ -33,5 +33,5 @@ angular.module('refugeeApp').service('GuideLineService', function () {
   this.findMotd = function(){
     var motd = localStorage.getItem('motd');
     return JSON.parse(motd);
-  }
+  };
 });

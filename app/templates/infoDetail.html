@@ -18,10 +18,13 @@
           &nbsp;
           {{info.group}}
         </ion-item>
-        <ion-item class="item-accordion"
+        <ion-item class="item-accordion item-text-wrap"
                   ng-repeat="item in info.items"
                   ng-show="isGroupShown(info)">
-          {{item.title}}
+          <h3>{{item.title}}</h3>
+          <p ng-hide="!item.location"><i class="icon ion-android-pin"></i> {{item.location}}</p>
+          <p ng-hide="!item.tel"><i class="icon ion-android-call"></i> {{item.tel}}</p>
+          <p ng-hide="!item.url"><i class="icon ion-android-open"></i><a href="javascript:void(0)" ng-click="openLink('{{item.url}}')"> {{item.url}}</a></p>
         </ion-item>
       </div>
     </ion-list>

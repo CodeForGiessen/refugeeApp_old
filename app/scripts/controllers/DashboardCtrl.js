@@ -17,7 +17,7 @@ angular.module('refugeeApp').controller('DashboardCtrl', function (GuideLineData
     var newDate = date.getDay();
 
 
-    if (currentDate != newDate && localStorage.getItem('defaultState') === 'app.dashboard') {
+    if (currentDate !== newDate && localStorage.getItem('defaultState') === 'app.dashboard') {
       $scope.langKey = GuideLineService.getLangKey();
       $scope.guides = GuideLineService.findAllGuidelines();
       $scope.categories = GuideLineService.findAllCategories();

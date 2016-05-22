@@ -16,19 +16,17 @@ angular.module('refugeeApp').controller('GuideCtrl', function (GuideLineService,
       var categories = res[1];
       $scope.langKey = langKey;
       $scope.categories = categories;
-      console.log('then...');
     })
       .finally(function(){
         $ionicLoading.hide();
         //$scope.$broadcast('scroll.refreshComplete');
-        console.log('finally...');
         });
   };
 
   $scope.reload = reload();
 
   $scope.$on('$ionicView.enter', reload);
-  
+
   /**
    *
    */
