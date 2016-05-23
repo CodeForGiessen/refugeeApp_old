@@ -18,12 +18,13 @@ Execute the following commands with a terminal in the root folder of this projec
 ```bash
 $ npm install
 $ bower install
-$ grunt
+$ grunt (maybe with --force)
 $ grunt plugin:add:cordova-plugin-device
 $ grunt plugin:add:cordova-plugin-console
 $ grunt plugin:add:cordova-plugin-splashscreen
 $ grunt plugin:add:cordova-plugin-network-information
 $ grunt plugin:add:cordova-plugin-inappbrowser
+$ grunt platform:add:<PLATFORM> (e.g. iOS or android)
 $ grunt serve
 ```
 
@@ -40,6 +41,7 @@ Path         | Explanation
 `./app/bower_components` | Download scripts using bower.
 `./resources/` | Your resource directory for iOS or Android
 `./test/` | Directory for your test scripts
+`.www/` | Directory which is used for the browser view and cordova build
 
 #Deployment
 ##Android Publishing
