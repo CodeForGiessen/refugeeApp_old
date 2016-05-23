@@ -44,4 +44,23 @@ Path         | Explanation
 `./test/` | Directory for your test scripts
 
 #Deployment
-
+##Android Publishing
+So first, we need to generate a release build of our app, targeted at each platform we wish to deploy on. Before we deploy, we should take care to adjust plugins needed during development that should not be in production mode.
+For example, we probably don’t want the debug console plugin enabled, so we should remove it before generating the release builds:
+```bash
+$ cordova plugin rm cordova-plugin-console
+```
+To generate a release build for Android, we can use the following cordova cli command:
+```bash
+$ cordova build --release android
+```
+This will generate a release build based on the settings in your **config.xml**. Next, we can find our unsigned APK file in **platforms/android/build/outputs/apk**.
+To sign the unsigned APK, run the **jarsigner** tool which is also included in the JDK:
+```bash
+$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore codefor-key.keystore android-release-unsigned.apk cfgi
+```
+This signs the apk in place. Finally, we need to run the zip align tool to optimize the APK.
+```bash
+$ zipalign -v 4 android-release-unsigned.apk RefugeeApp.apk
+```
+Now we have our final release binary called **RefugeeApp.apk** and we can release this on the Google Play Store for all the world to enjoy!
