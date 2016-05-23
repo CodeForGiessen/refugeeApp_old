@@ -1,8 +1,13 @@
-# Code for Gießen - RefugeeApp
-==============================
+#**Code for Gießen - RefugeeApp**
 
-You need grunt, bower and compass to start developing.
 
+#Introduction
+This is a Ionic frontend application that works with the corresponding ![backend](https://github.com/CodeForGiessen/refugeeService)
+
+First of all you need grunt, bower and compass to start developing.
+
+#Installation
+Execute the following commands with a terminal in the root folder of this project
 
 ```bash
 $ npm install
@@ -16,3 +21,17 @@ $ grunt plugin:add:org.apache.cordova.geolocation
 $ grunt plugin:add:org.apache.cordova.inappbrowser
 $ grunt serve
 ```
+
+#Project Structure
+
+Path         | Explanation
+----------   | -------------
+`./app/fonts/` | Fonts in your app.
+`./app/images/` | Images in your app.
+`./app/scripts/`  | Scripts (Controllers, Services, Directives, etc).
+`./app/styles/` | The styles of your app using Sass.
+`./app/templates/` | Views in your app. (Only html files)
+`./app/index.html` | The init page.
+`./app/bower_components` | Download scripts using bower.
+`./resources/` | Your resource directory for iOS or Android
+`./test/` | Directory for your test scripts
