@@ -21,7 +21,7 @@ $ npm install
 $ bower install
 $ grunt
 $ grunt plugin:add:org.apache.cordova.device
-$ grunt plugin:add:org.apache.cordova.console
+$ grunt plugin:add:cordova-plugin-console
 $ grunt plugin:add:org.apache.cordova.splashscreen
 $ grunt plugin:add:org.apache.cordova.network-information
 $ grunt plugin:add:org.apache.cordova.geolocation
@@ -55,11 +55,14 @@ To generate a release build for Android, we can use the following cordova cli co
 $ cordova build --release android
 ```
 This will generate a release build based on the settings in your **config.xml**. Next, we can find our unsigned APK file in **platforms/android/build/outputs/apk**.
+Before you can run the jarsigner command, copy the .keystore file into **platforms/android/build/outputs/apk**.
 To sign the unsigned APK, run the **jarsigner** tool which is also included in the JDK:
 ```bash
 $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore codefor-key.keystore android-release-unsigned.apk cfgi
 ```
-This signs the apk in place. Finally, we need to run the zip align tool to optimize the APK.
+Enter the password for our keystore.
+
+This signs the apk in place. Finally, we need to run the zip align tool to optimize the APK. The **zipalign** tool can be found in **/path/to/Android/sdk/build-tools/VERSION/zipalign.** For example, on OS X with Android Studio installed, zipalign is in **~/Library/Android/sdk/build-tools/VERSION/zipalign**:
 ```bash
 $ zipalign -v 4 android-release-unsigned.apk RefugeeApp.apk
 ```
