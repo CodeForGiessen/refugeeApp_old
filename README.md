@@ -1,6 +1,5 @@
 #**Code for Gießen - RefugeeApp**
 
-![Ionic Framework](https://github.com/CodeForGiessen/refugeeApp/blob/master/app/images/ionic.png?raw=true)
 ![IonicMaterial](https://github.com/CodeForGiessen/refugeeApp/blob/master/app/images/logo-256.png?raw=true)
 ![Yeoman-generator-ionic](https://camo.githubusercontent.com/2aa3496f7bf9aeb758477ce01961748a486af0fe/687474703a2f2f692e696d6775722e636f6d2f4247727432514b2e706e67)
 
@@ -20,12 +19,11 @@ Execute the following commands with a terminal in the root folder of this projec
 $ npm install
 $ bower install
 $ grunt
-$ grunt plugin:add:org.apache.cordova.device
+$ grunt plugin:add:cordova-plugin-device
 $ grunt plugin:add:cordova-plugin-console
-$ grunt plugin:add:org.apache.cordova.splashscreen
-$ grunt plugin:add:org.apache.cordova.network-information
-$ grunt plugin:add:org.apache.cordova.geolocation
-$ grunt plugin:add:org.apache.cordova.inappbrowser
+$ grunt plugin:add:cordova-plugin-splashscreen
+$ grunt plugin:add:cordova-plugin-network-information
+$ grunt plugin:add:cordova-plugin-inappbrowser
 $ grunt serve
 ```
 
