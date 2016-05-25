@@ -2,6 +2,10 @@
   "name": "Refugees Giessen Frontend",
   "version": "1.0.0",
   "author": "Florian Kolb",
+  "description": "",
+  "repository": "",
+  "readme": "",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "cordova": "6.1.1",
@@ -57,7 +61,6 @@
   "scripts": {
     "test": "grunt test"
   },
-  "license": "MIT",
   "cordovaPlugins": [
     "org.apache.cordova.device",
     "org.apache.cordova.console",
